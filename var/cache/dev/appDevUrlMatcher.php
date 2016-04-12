@@ -106,7 +106,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->redirect($pathinfo.'/', 'back_homepage');
             }
 
-            return array (  '_controller' => 'BackBundle\\Controller\\DefaultController::indexAction',  '_route' => 'back_homepage',);
+            return array (  '_controller' => 'BackBundle:Default:index',  '_route' => 'back_homepage',);
         }
 
         // tabella
@@ -133,7 +133,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->redirect($pathinfo.'/', 'front_homepage');
             }
 
-            return array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::indexAction',  '_route' => 'front_homepage',);
+            return array (  '_controller' => 'FrontBundle:Default:index',  '_route' => 'front_homepage',);
         }
 
         if (0 === strpos($pathinfo, '/gelateri')) {

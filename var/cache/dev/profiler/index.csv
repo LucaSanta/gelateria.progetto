@@ -946,3 +946,6 @@ e3e355,127.0.0.1,GET,http://gelateria.progetto/app_dev.php/home,1460386311,,200
 3e1b07,127.0.0.1,GET,http://gelateria.progetto/app_dev.php/comefunziona,1460386544,,200
 5fcdd1,127.0.0.1,GET,http://gelateria.progetto/app_dev.php/gelaterie,1460386547,,200
 cd34e7,127.0.0.1,GET,http://gelateria.progetto/app_dev.php/gelateria/123,1460458354,,200
+0709b4,127.0.0.1,GET,http://gelateria.progetto:8000/app_dev.php/login,1460485130,6461d6,200
+6461d6,127.0.0.1,GET,http://gelateria.progetto:8000/app_dev.php/login,1460485130,,404
+de4fb2,127.0.0.1,GET,http://gelateria.progetto:8000/app_dev.php/Userlogin,1460485151,,200
