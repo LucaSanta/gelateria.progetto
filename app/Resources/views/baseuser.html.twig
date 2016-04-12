@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /></head>
+
+<body>
+ <header>
+  <div class="logo">
+    <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
+  </div>
+  <div class="pulsanteapp">
+    <a href="/app_dev.php/Userlogin" class="app">login</a>
+  </div>
+</header>
+<nav id="navbar">
+  <ul class="menu">
+    <li><a href="/app_dev.php/home">Home</a></li>
+    <li><a href="/app_dev.php/gelaterie">Gelaterie</a></li>
+    <li><a href="/app_dev.php/comefunziona">Come funziona</a></li>
+  </ul>
+</nav>
+
+<!-- fine parte alta-->
+
+<div id="boximg">
+{% block body %}
+{% endblock %}
+</div>
+
+  <footer id="tutto">
+    <div id="contenitorelogo">
+      <img  class="logofooter" src="/img/Logo.png" alt="logo">
+    </div>
+    <br/>
+    <div id="contenitoresocial">
+      <img class="social" src="/img/facebook1.png" alt="Facebook">
+      <img class="social" src="/img/twitter1.png" alt="Twitter">
+      <img class="social" src="/img/email1.png" alt="Email">
+    </div>
+
+    <div id="boxtesti">
+      <div id="boxtesto1">
+        <p class="titolifooter">Chi siamo</p>
+        <p class="testifooter">Leader nazionale nella produzione di gelato sfuso, Gelatone B&B ha deciso di affidarsi alla TAG Solutions per lo sviluppo di una piattaforma web-based dedicata alla ricerca delle gelaterie sul territorio italiano.</p>
+      </div>
+<div id="boxtesto2">
+        <p class="titolifooter">Contatti</p>
+        <p class="testifooter">info@gelato.b&b.com<br/>
+          Viale Umbria 76<br/>
+          20021, Milano<br/>
+        <a href="/app_dev.php/segnalagelateria">Segnala Gelateria</a><br/>
+</p>
+        </div>
+        <div id="boxtesto3">
+          <p class="titolifooter">Gelatone B&B</p>
+          <p class="testifooter">Capitale Sociale Euro 10.000,00 i.v.<br/>
+            P.IVA IT 03419970987<br/>
+            C.F. - R.I. BS 03419970987<br/>
+            R.E.A. CCIAA BS 532571</p>
+          </div>
+          <div id="boxtesto4">
+            <p class="titolifooter">Le città più ricercate</p>
+            <p class="testifooter"><a href="#">Ricerca su Milano</a><br/>
+              <a href="/app_dev.php/tabella">Ricerca su Roma</a><br/>
+              <a href="/app_dev.php/edit">Ricerca su Napoli</a><br/>
+              <a href="/app_dev.php/editgusto">Ricerca su Palermo</a></p>
+            </div>
+          </div>
+        </footer>
+
+
+    </body>
+    </html>

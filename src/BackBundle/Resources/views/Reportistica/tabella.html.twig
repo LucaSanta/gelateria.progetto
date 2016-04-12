@@ -1,0 +1,60 @@
+{% extends "::baseadmin.html.twig" %}
+
+{% block title %}Reportistica{% endblock %}
+{% block stylesheets %}        <link rel="stylesheet" href="/css/reportistica.css" href="/css/reportistica.css" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+
+  <div id="larghezza">
+    <div id="sidebar" class="sidebar1">
+      <br/>
+      <form  method="GET">
+
+        <div class="lineaunoform">
+        <p class="benvenuto">Reportistica:</p> 
+        <p>Seleziona Gusto:</p>
+        <input class="inputalto" type="text" name="Gusto" value="Nome Gusto">
+      <br/>
+      <p>Seleziona Città:</p>
+        <input class="inputalto" type="text" name="Comune" value="Nome Città">
+
+      <input class="bottone" type="submit" value="Ricerca" />
+        </div>
+
+      </form>
+
+
+      <form class="aggiungi" method="GET">
+      <div class="lineadueform">
+      <p class="benvenuto">Aggiungi - Modifica</p>   
+        <p>Gelateria:</p>
+              <input class="inputalto" type="text" name="Nuova gelateria" value="Nome gelateria">
+         <p>Gusto:</p>      
+
+      <input class="inputalto" type="text" name="Aggiungi gusto" value="Nome gusto">
+       <input class="bottone" type="submit" value="Invia" />
+
+      </form>
+      </div>
+
+    </div>
+    
+    <div id="gelateria">
+      <div id="descrizione">
+        <p class="nomegelateria">Reportistica $parametro</p>       
+        <p class="indirizzo">Invia reportistica via mail >> <br/></p>
+        <br/>
+       <img class="grafico" src="/img/Grafico_3.jpg"></p><br/>
+     
+        <br/>
+       
+
+      </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

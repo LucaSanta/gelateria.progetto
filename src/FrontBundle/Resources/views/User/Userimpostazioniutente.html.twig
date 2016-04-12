@@ -1,0 +1,53 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}        <link rel="stylesheet" href="/css/impostazioneutente.css" href="/css/impostazioneutente.css" type="text/css">
+{% endblock %}
+ {% block body %}
+<div id="gelateria">
+      <div id="idgelatino"><img class="gelatino" src="/img/gelatino3.png"></div>
+      <div id="descrizione">
+          <form method="GET">
+
+
+      <label for=”Nomeutente″>Nome utente:<br></label>
+      <input class="nomegelateria" name="Nomeutente" type="text" value="Beatrice" size="40" maxlength="200" />
+              <br/>
+
+      <label for=”mail″>E-mail:<br></label>
+      <input class="indirizzo" name="mail" type="text" value="beatrice.castaldo@gmail.com" size="40" maxlength="200" />
+        <br/>
+
+      <label for=”PSW″>Password:<br></label>
+      <input class="indirizzo" name="PSW" type="password" value="MilanoCapitale!" size="40" maxlength="200" />
+       <br/>
+
+
+      <label for=”PSW2″>Conferma Password:<br></label>
+      <input class="indirizzo" name="PSW2" type="password" value="MilanoCapitale!" size="40" maxlength="200" />
+      <br/>
+
+      
+
+        <input class="bottone" type="submit" value="Salva" />
+
+       </form>
+
+
+        <br/>
+        <p class="gustidisponibili">Lista delle gelaterie preferite <a href="#"><img class="icona1" src="/img/shapes.png"></a>
+</p>
+        <div class="gusti">
+        <div class="elencogusti">
+          <p>Gelateria Giolitti <a href="#"><img class="icona1" src="/img/cestino.png"></a> </p>
+          <p>Gelateria Santa <a href="#"><img class="icona1" src="/img/cestino.png"></a></p>
+          <p>Gelateria Castaldo <a href="#"><img class="icona1" src="/img/cestino.png"></a></p>
+          <p>Gelateria Tundra  <a href="#"><img class="icona1" src="/img/cestino.png"></a></p>
+          <p>Gelateria Sir Oliver <a href="#"><img class="icona1" src="/img/cestino.png"></a></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+
+
+ {% endblock %}

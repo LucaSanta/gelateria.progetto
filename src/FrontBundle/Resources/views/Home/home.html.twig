@@ -1,0 +1,49 @@
+{% extends "::basehome.html.twig" %}
+{% block body %}
+<title>Gelatò</title>
+  <div class="trasparente">
+        <form method="GET">
+            
+            <h2>Trova la tua gelateria!</h2>
+            <p>Seleziona i tuoi gusti preferiti oppure scegli il comune o il giorno in cui vorresti andare a rinfrescare la tua giornata!</p>
+ 
+            <div class="lineaunoform">
+                
+                <select id="gusto1" class="formgusti" name="gusto1">
+                    <option value="Cioccolato">Cioccolato</option>
+                    <option value="Pistacchio">Pistacchio</option>
+                    <option value="Crema">Crema</option>
+                    <option value="Vaniglia">Vaniglia</option>
+                </select>
+                <select id="gusto2"  class="formgusti" name="gusto2">
+                    <option value="Cioccolato">Cioccolato</option>
+                    <option value="Pistacchio">Pistacchio</option>
+                    <option value="Crema">Crema</option>
+                    <option value="Vaniglia">Vaniglia</option>
+                </select>
+                <select id="gusto3" class="formgusti" name="gusto3">
+                    <option value="Cioccolato">Cioccolato</option>
+                    <option value="Pistacchio">Pistacchio</option>
+                    <option value="Crema">Crema</option>
+                    <option value="Vaniglia">Vaniglia</option>
+                </select>
+            </div>
+            
+            <div class="lineadueform">
+                <input type="text" class="formgusti" name="Comune" value="Comune">
+            
+                <select id="giorni"  class="formgusti" name="aperture">
+                    <option value="Lun">Lunedì</option>
+                    <option value="Mart">Martedì</option>
+                    <option value="Merc">Mercoledì</option>
+                    <option value="Giov">Giovedì</option>
+                </select>
+            </div>
+            <br/>
+            <div style="text-align:center;">
+             <input type="submit" class="bottone" value="Ricerca" />
+         </div>
+    
+ </form>
+</div>
+{% endblock %}

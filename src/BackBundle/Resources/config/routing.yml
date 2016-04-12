@@ -1,0 +1,15 @@
+back_homepage:
+    path:     /
+    defaults: { _controller: BackBundle:Default:index }
+
+tabella:
+    path:     /tabella
+    defaults: { _controller: BackBundle:Reportistica:tabella }
+
+edit:
+    path:     /edit
+    defaults: { _controller: BackBundle:Edit:edit }
+
+editgusto:
+    path:     /editgusto
+    defaults: { _controller: BackBundle:Edit:editgusto }

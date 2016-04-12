@@ -1,0 +1,80 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}        <link rel="stylesheet" href="/css/elenco.css" href="/css/elenco.css" type="text/css">
+{% endblock %}
+
+{% block title %}Gelateria{% endblock %}
+
+{% block body %}
+ <div id="gelateria">
+          <p class="parametro">Elenco gelaterie per $parametro!</p>
+
+      <div id="idgelatino"><img class="gelatino" src="{{ asset('img/gelatino5.png') }}"></div>
+      <div id="descrizione">
+           <p class="nomegelateria"><a class="scheda" href="/app_dev.php/gelateria/1">Gelateria Giolitti </a><br/>
+</p>         
+        <div class="indirizzo">Via Uffici del Vicario, 40 - 00186 Roma <br/> Tel: +39 06 699 12 43</div>
+        <br/>
+
+      </div>
+    </div>
+
+  <div id="gelateria">
+      <div id="idgelatino"><img class="gelatino" src="/img/gelatino6.png"></div>
+      <div id="descrizione">
+        <p class="nomegelateria"><a class="scheda" href="/app_dev.php/gelateria/{id}">Gelateria Giolitti </a><br/>
+</p>       
+        <p class="indirizzo">Via Uffici del Vicario, 40 - 00186 Roma <br/> Tel: +39 06 699 12 43</p>
+        <br/>
+      </div>
+    </div>
+
+
+    <div id="gelateria">
+      <div id="idgelatino"><img class="gelatino" src="/img/gelatino3.png"></div>
+      <div id="descrizione">
+   <p class="nomegelateria"><a class="scheda" href="/app_dev.php/gelateria/{id}">Gelateria Giolitti </a><br/>
+</p>   
+        <p class="indirizzo">Via Uffici del Vicario, 40 - 00186 Roma <br/> Tel: +39 06 699 12 43</p>
+        <br/>
+      </div>
+    </div>   
+
+ <div id="gelateria">
+      <div id="idgelatino"><img class="gelatino" src="/img/gelatino1.png"></div>
+      <div id="descrizione">
+   <p class="nomegelateria"><a class="scheda" href="/app_dev.php/gelateria/{id}">Gelateria Giolitti </a><br/>
+</p>   
+        <p class="indirizzo">Via Uffici del Vicario, 40 - 00186 Roma <br/> Tel: +39 06 699 12 43</p>
+        <br/>
+      </div>
+    </div>
+
+    <div id="gelateria">
+      <div id="idgelatino"><img class="gelatino" src="/img/gelatino2.png"></div>
+      <div id="descrizione">
+   <p class="nomegelateria"><a class="scheda" href="/app_dev.php/gelateria/{id}">Gelateria Giolitti </a><br/>
+</p>   
+        <p class="indirizzo">Via Uffici del Vicario, 40 - 00186 Roma <br/> Tel: +39 06 699 12 43</p>
+        <br/>
+      </div>
+    </div>
+
+     <div id="gelateria">
+      <div id="idgelatino"><img class="gelatino" src="/img/gelatino4.png"></div>
+      <div id="descrizione">
+   <p class="nomegelateria"><a class="scheda" href="/app_dev.php/gelateria/{id}">Gelateria Giolitti </a><br/>
+</p>   
+        <p class="indirizzo">Via Uffici del Vicario, 40 - 00186 Roma <br/> Tel: +39 06 699 12 43</p>
+        <br/>
+      </div>
+    </div>
+
+
+
+  </div>
+  <!--<div class="mockup"><img id="mockupid" src="img/mockup.png" alt="Mockup"></div>-->
+</div>
+
+
+{% endblock %}
+

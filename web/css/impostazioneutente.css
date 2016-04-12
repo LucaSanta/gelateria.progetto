@@ -1,0 +1,412 @@
+* { border:0; padding:0; margin:0; }
+
+/* importo font */
+@font-face{
+    font-family: Questrial;
+    src: url(/img/font/Questrial-Regular.otf);
+}
+@font-face{
+    font-family: Amatic;
+    src: url(/img/font/AmaticSC-Regular.ttf);
+
+}
+
+@font-face {
+    font-family: 'AmaticSC-Bold';
+    src: url(/img/font/AmaticSC-Bold.ttf);
+}
+
+/* imposto font body + immagine bckg */
+body {
+    
+    background-image: url('/img/pattern.png');
+    background-repeat: repeat;
+    background-size: 30%;
+    font-family: Questrial, serif; 
+}
+
+/* divido l header in percentuali e da li in posto i due div logo e pulsanteapp */
+header {
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+
+header div{
+    display: inline-block;
+    width: 29%;
+}
+
+.pulsanteapp {
+    text-align: right;
+    margin-left: 28.8%;
+    font-family: 'Amatic';
+    font-size: 30px;
+    border-radius: 12px;
+    background-color: #18c7aa;
+    width: 5.7%;
+    height: 50%;
+    position: absolute;
+    margin-top: 32px;
+    padding-left: 14px;
+
+}
+
+.pulsanteapp a {
+    text-decoration: none;
+    color: #fff;
+    padding-right: 0px;
+    font-family: 'Amatic';
+    font-size: 30px;
+    border-radius: 12px;
+    list-style-type: none !important; 
+
+
+}
+
+/*menu a tendina prova */
+
+.utente {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 18px;
+    font-family: 'Amatic';
+    font-size: 30px;
+    border-radius: 12px;
+    list-style-type: none !important; 
+
+
+}
+
+ul#menu 
+{
+    list-style-type: none !important; 
+
+}
+
+ul#menu li a:hover {
+    background: #18c7aa;
+    width: 2,00%;
+    border-radius: 12px;
+    list-style-type: none;
+
+
+
+}
+
+ul#menu ul {
+    margin:2px 0 0;
+    padding:0;
+    display:inline-block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index:9999;
+    border: 1px solid #18c7aa;
+    background: #18c7aa;
+    border-radius: 12px;
+    color: #18c7aa;
+    margin-top: 37px;
+    text-align: left;
+
+}
+
+ul#menu li:hover ul {
+    opacity: 1;
+    visibility: visible;
+
+
+}
+
+ul#menu ul li {
+    float: none;
+    display: block;
+    border: 0;
+    color: #18c7aa;
+
+
+
+}
+
+ul#menu ul a {
+    padding:10px;
+    width: 120px;
+    display: block;
+    white-space: nowrap;
+    float: none;
+    font-size: 25px;
+
+}
+
+ul#menu ul a:hover {
+    background-color: #fff;
+    color:#18c7aa;
+    font-size: 31px;
+    text-align: left;
+
+
+}
+
+/*fine menu a tendina prova */
+
+
+.logo {
+    margin-left: 15.5%;
+
+}
+
+.logo img {
+    width: 120px;
+    text-align: left;
+    margin-top: 1.2%;
+}
+
+.menu {
+    font-family: 'Amatic';
+    font-size: 35px;
+    background-color: #fff; 
+    }
+
+
+ul.menu {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #18c7aa;
+    margin-right: 20%;
+    margin-left: 20%;
+    text-align: center;
+    position: relative;
+
+}
+
+
+ul.menu li {
+    display: inline-block;
+    padding: 5px 40px 5px 40px;
+}
+
+ul.menu li a {
+        text-decoration: none;
+        color: #000;
+}
+
+ul.menu li a:hover {
+        color:#18c7aa;
+
+}
+
+ul.menu li a:active {
+            color:#18c7aa;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*finito il menu*/
+
+#boximg {
+    background-image: url(/img/cream-vicky-wasik-1-thumb-1500xauto-406960.png);
+    margin-right: 8%;
+    margin-left: 8%;
+    height: 600px;
+    margin-top: -2%;
+    padding-top: 7%;
+}
+
+#larghezza {
+    width: 100%;
+}
+
+
+#sidebar{
+    height: 54%;
+    width: 15%;
+    background-color: #14a58d;
+    text-align: center;
+    border-radius: 3em;
+    padding: 2%;
+    margin-left: 4%;
+    float: left;
+    position: fixed;
+    text-align: center;
+
+}
+
+.benvenuto {
+    font-family: 'Amatic';
+    font-size: 30px;
+    color: #ffffff;
+    margin-top: -5px;
+}
+
+select.formgusti {
+    margin-top: 4%;
+    font-family: 'Questrial';
+}
+
+#sidebar select {
+    background: #fff; /* Colore di sfondo */
+    /*border: 1px solid #323232;  Bordo */
+    color: #000; /* Colore del testo */
+    height: 25px; /* Altezza */
+    line-height: 25px; /* Altezza di riga */
+    width: 162px; /* Larghezza */
+     /* Padding */
+    padding-left: 10px;
+    border-radius: 4px;
+    margin: 5px;
+    text-align: center;
+
+}
+
+
+
+input.bottone {
+    border: 1px solid #18c7aa;
+    border-radius: 4px;
+    background: #fff;
+    width: 70px;
+    height: 30px;
+    line-height: 40px;
+    color: #000;
+    padding-left: 0px;
+    margin-top: 5px;
+    font-family: Amatic;
+    font-size: 22px;
+    padding-bottom: 40px;
+}
+
+#gelateria {
+    border-radius: 3em;
+    width: 60%;
+    float: right;
+    padding-top: 2.5%;
+    margin-right: 5%; 
+}
+
+#preferiti {
+    padding-top: 1%;
+}
+
+.preferiti {
+    color: #18c7aa; 
+    float: right;
+}
+
+label {
+    margin-top: 5px;
+    font-family: Questrial;
+
+}
+
+.icona1 {
+    width: 16px;
+    padding: 3px;
+    padding-left:  10px;
+
+}
+
+.icona2 {
+    padding-left: 360px;
+    width: 16px;
+}
+
+
+#idgelatino {
+    width: 5%;
+    float: left;
+}
+
+.gelatino {
+    height: 80px;
+}
+
+#descrizione {
+    width: 90%;
+    float: right;
+}
+
+.nomegelateria {
+    font-family: 'AmaticSC-Bold';
+    font-size: 35px;
+    color: #18c7aa;
+    padding-left: 8px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-top: 2px;
+}
+
+.indirizzo {
+    font-family: 'AmaticSC-Bold';
+    font-size: 19px;
+    padding-left: 8px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-top: 2px;
+
+
+}
+
+.gustidisponibili {
+    font-family: 'AmaticSC-Bold';
+    font-size: 25px;
+    color: #18c7aa;
+}
+
+.sidebar1 {
+    opacity: 0.9;
+}
+
+
+/* bea footer*/
+
+#tutto {
+    background: #f2f2f2;
+    text-align: center;
+    position: relative;
+    padding: 5%;
+    margin-right: 8%;
+    margin-left: 8%;
+}
+
+.logofooter {
+    width: 64px;
+    margin-left: 0.5%;
+}
+
+
+.social {
+    width: 16px;
+    padding: 1%;
+}
+
+.titolifooter {
+    font-family: 'AmaticSC-Bold';
+    font-size: 125%;
+}
+
+.testifooter {
+    font-family: 'Questrial';
+    font-size: 78%;
+    padding-top: 5%;
+}
+
+
+#boxtesti div {
+    width: 22%;
+    text-align: top;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 3%;
+
+}
+
+#tutto a {
+    text-decoration: none;
+    color: #18c7aa;
+}
+

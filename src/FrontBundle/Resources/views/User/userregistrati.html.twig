@@ -1,0 +1,37 @@
+ {% extends "::baseuser.html.twig" %}
+
+{% block stylesheets %}        <link rel="stylesheet" href="/css/login.css" href="/css/login.css" type="text/css">
+{% endblock %}
+ {% block body %}
+
+  <div class="trasparente">
+    <p class="click">Registrati!</p>
+    <p class="istruzioni">Inserisci qui le tue informazioni personali per registrarti e accedere a tutte le funzionalità del sito!</p>
+    <br/><br/>
+    <div id="formid">
+      <form action="GET">
+        <label class="nomeutente" for="nomeutente">nome utente</label><br/>
+        <input type="text" name="nomeutente"/>
+        <br/><br/>
+        <label class="mail" for="mail">email</label><br/>
+        <input type="mail"  name="mail"/>
+        <br/><br/>
+        <label class="password" for="password1">password</label><br/>
+        <input class="password" type="password" name="password1"/>
+        <br/><br/>
+        <label class="password" for="password2">Conferma password</label><br/>
+        <input class="password" type="password" name="password2"/>
+        <br/><br/>
+        <input class="bottone" type="submit" value="entra"/>
+      </form>
+    </div>
+
+
+
+
+  <div class="gelatini"><img id="gelatinoidpsw" src="/img/gelatino2.png" alt="Gelatino">  
+  
+
+</div>
+ {% endblock %}
+

@@ -1,0 +1,267 @@
+* { border:0; padding:0; margin:0; }
+
+/* importo font */
+@font-face{
+  font-family: Questrial;
+  src: url(/img/font/Questrial-Regular.otf);
+}
+@font-face{
+  font-family: Amatic;
+  src: url(/img/font/AmaticSC-Regular.ttf);
+
+}
+
+@font-face {
+  font-family: 'AmaticSC-Bold';
+  src: url(/img/font/AmaticSC-Bold.ttf);
+}
+
+/* imposto font body + immagine bckg */
+body {
+  
+  background-image: url('/img/pattern.png');
+  background-repeat: repeat;
+  background-size: 30%;
+  font-family: Questrial, serif; 
+}
+
+/* divido l header in percentuali e da li in posto i due div logo e pulsanteapp */
+header {
+  width: 100%;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 18px;
+}
+
+header div{
+  display: inline-block;
+  width: 29%;
+}
+
+.pulsanteapp {
+  text-align: right;
+  margin-left: 29.8%;
+  font-family: 'Amatic';
+  font-size: 30px;
+  border-radius: 12px;
+  background-color: #18c7aa;
+  width: 5.7%;
+  height: 50%;
+  position: absolute;
+  margin-top: 32px;
+}
+
+.pulsanteapp a {
+  text-decoration: none;
+  color: #fff;
+  padding-right: 15px;
+}
+
+.pulsanteapp a:hover {
+  color: #000;
+}
+
+.logo {
+  margin-left: 15.5%;
+
+}
+
+.logo img {
+  width: 120px;
+  text-align: left;
+  margin-top: 1.2%;
+}
+
+.menu {
+  font-family: Amatic;
+  font-size: 35px;
+  background-color: #fff; 
+    }
+
+
+ul.menu {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #18c7aa;
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align: center;
+  position: relative;
+
+}
+
+
+ul.menu li {
+  display: inline-block;
+  padding: 5px 40px 5px 40px;
+}
+
+ul.menu li a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul.menu li a:hover {
+  color:#18c7aa;
+
+}
+
+ul.menu li a:active {
+  color:#18c7aa;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*modifiche fatte da bea*/
+
+#boximg {
+  background-image: url('/img/DIYgelati.png');
+    background-size: cover;
+    margin-right: 8%;
+    margin-left: 8%;
+    height: 750px;
+    margin-top: -2%;
+    padding-top: 5%;
+}
+
+
+.click {
+  font-family: 'AmaticSC-Bold';
+  font-size: 4em;
+  color: #18c7aa;
+}
+
+.istruzioni {
+  font-family: 'Questrial';
+  font-size: 1.1em;
+  padding-top: 3%;
+}
+
+#formid {
+  text-align: center;
+
+}
+
+input {
+  background: #18c7aa; /* Colore di sfondo */
+    /*border: 1px solid #323232;  Bordo */
+    color: #fff; /* Colore del testo */
+    height: 25px; /* Altezza */
+    line-height: 25px; /* Altezza di riga */
+    width: 150px; /* Larghezza */
+    margin: 0 10px; /* Padding */
+    padding-left: 10px;
+    border-radius: 4px;
+}
+
+
+input.bottone {
+  border: 1px solid #18c7aa;
+  border-radius: 4px;
+  background: #fff;
+  width: 70px;
+  height: 30px;
+  line-height: 40px;
+  color: #000;
+  padding-left: 0px;
+  font-family: Amatic;
+  font-size: 22px;
+  padding-bottom: 40px;
+}
+
+.trasparente {
+  height: 72%;
+  width: 45%;
+  background-color: white;
+  opacity: 0.8;
+  text-align: center;
+  border-radius: 3em;
+  padding: 3% 6% 6% 6%;
+  margin: auto;
+  position: relative;
+}
+
+
+#gelatinoid {
+    height: 90px;
+    position: absolute;
+    top: 680px;
+    left: 659px;
+}
+
+#gelatinoidregistrati {
+    height: 90px;
+    position: absolute;
+    top: 700px;
+    left: 659px;
+}
+
+#gelatinoidpsw {
+    height: 90px;
+    position: absolute;
+    top: 600px;
+    left: 659px;
+}
+
+.registrati {
+    position: absolute;
+    top: 780px;
+    left: 43%;
+}
+
+.passwordimenticata {
+    position: absolute;
+    top: 795px;
+    left: 40%;
+}
+
+/* bea footer*/
+
+#tutto {
+  background: #f2f2f2;
+    text-align: center;
+    position: relative;
+    padding: 5%;
+    margin-right: 8%;
+    margin-left: 8%;
+}
+
+.logofooter {
+  width: 64px;
+  margin-left: 0.5%;
+}
+
+
+.social {
+  width: 16px;
+  padding: 1%;
+}
+
+.titolifooter {
+  font-family: 'AmaticSC-Bold';
+  font-size: 125%;
+}
+
+.testifooter {
+  font-family: 'Questrial';
+  font-size: 78%;
+  padding-top: 5%;
+}
+
+
+#boxtesti div {
+  width: 22%;
+  text-align: top;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3%;
+
+}
+
+#tutto a {
+  text-decoration: none;
+  color: #18c7aa;
+}
+

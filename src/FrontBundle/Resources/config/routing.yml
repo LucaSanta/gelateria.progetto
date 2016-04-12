@@ -1,0 +1,43 @@
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:index }
+
+_rotta:
+    path:     /gelaterie
+    defaults: { _controller: FrontBundle:Gelateria:rotta }
+
+_gelateria:
+    path:     /gelateria/{id}
+    defaults: { _controller: FrontBundle:Gelateria:gelateria }
+
+_segnalagelateria:
+    path:     /segnalagelateria
+    defaults: { _controller: FrontBundle:Gelateria:segnalagelateria }
+
+_home:
+    path:     /home
+    defaults: { _controller: FrontBundle:Home:Home }
+    
+_comefunziona:
+    path:     /comefunziona
+    defaults: { _controller: FrontBundle:Home:Comefunziona }
+
+_search:
+    path:     /Search
+    defaults: { _controller: FrontBundle:Search:Search }
+
+_userlogin:
+    path:     /Userlogin
+    defaults: { _controller: FrontBundle:User:Userlogin}
+
+_userregistrati:
+    path:     /Userregistrati
+    defaults: { _controller: FrontBundle:User:Userregistrati}
+
+_userpswdimenticata:
+    path:     /Userpswdimenticata
+    defaults: { _controller: FrontBundle:User:Userpswdimenticata}
+
+_userimpostazioniutente:
+    path:     /Userimpostazioniutente
+    defaults: { _controller: FrontBundle:User:Userimpostazioniutente}
