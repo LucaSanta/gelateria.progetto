@@ -187,4 +187,3 @@ class Gelateria
         return $this->descrizione;
     }
 }
-

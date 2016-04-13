@@ -63,4 +63,3 @@ class Gusti
         return $this->nome;
     }
 }
-

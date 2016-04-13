@@ -94,4 +94,3 @@ class ListaGusti
         return $this->idGusto;
     }
 }
-
