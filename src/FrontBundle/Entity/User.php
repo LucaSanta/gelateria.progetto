@@ -15,6 +15,13 @@ class User extends BaseUser
 {
 
     /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nome", type="string", length=255)
@@ -197,4 +204,15 @@ class User extends BaseUser
     {
         return $this->isadmin;
     }
+
+    /**
+     * User constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
 }
+
