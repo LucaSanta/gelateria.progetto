@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% block stylesheets %}{% endblock %}
-  <title>{% block title %}{% endblock %}</title>
-</head>
+<meta charset="UTF-8" />
+        <title>{% block title %}Benvenuto!{% endblock %}</title>
+<link rel="stylesheet" href="/css/login.css" href="/css/login.css" type="text/css">
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /></head>
 
 <body>
  <header>
   <div class="logo">
-    <a href="header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
+    <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
   </div>
- <div class="pulsanteapp">
-  <li>
+  <div class="pulsanteapp">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                 <a href="{{ path('fos_user_security_logout') }}" class="utente">
                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                 </a>
-            {% else %}
-                <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %} <!-- primo list-item, prima voce del menu -->
-        <ul > <!-- Lista annidata: voci del sotto-menu -->
+                <ul > <!-- Lista annidata: voci del sotto-menu -->
             <li><a href="/app_dev.php/Userimpostazioniutente">Impostazioni</a></li>
             <li><a href="/app_dev.php/home">Logout</a></li>
         </ul> <!-- Fine del sotto-menu -->
-    </li> <!-- Chiudo il list-item -->
-   </div>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %} <!-- primo list-item, prima voce del menu -->  </div>
 </header>
 <nav id="navbar">
   <ul class="menu">
@@ -41,12 +36,34 @@
 
 <!-- fine parte alta-->
 
-<div id="boximg">
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
 
-{% block registrati-pswdimenticata %}
-{% endblock %}
+<div id="boximg">
+  <div class="trasparente">
+
+ {%  block  fos_user_content  %} 
+ {%  endblock  fos_user_content  %} 
+
+ </div>
+</div>
+
+ <div class="gelatini"><img id="gelatinoid" src="/img/gelatino2.png" alt="Gelatino">  
+
+{% block testovariabile %}
+{% endblock testovariabile %} 
+
 
 </div>
+
+ </div>
 
   <footer id="tutto">
     <div id="contenitorelogo">
