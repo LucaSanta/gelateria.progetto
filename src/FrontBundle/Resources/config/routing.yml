@@ -21,7 +21,7 @@ _comefunziona:
     defaults: { _controller: FrontBundle:Home:Comefunziona }
 
 _search:
-    path:     /Search
+    path:     /search
     defaults: { _controller: FrontBundle:Search:Search }
 
 _userlogin:
