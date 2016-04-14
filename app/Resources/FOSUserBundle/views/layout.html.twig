@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8" />
-        <title>{% block title %}Benvenuto!{% endblock %}</title>
-<link rel="stylesheet" href="/css/login.css" href="/css/login.css" type="text/css">
-
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /></head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Benvenuto!{% endblock %}</title>
+    <link rel="stylesheet" href="/css/login.css" href="/css/login.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  </head>
 
 <body>
- <header>
-  <div class="logo">
-    <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
-  </div>
-  <div class="pulsanteapp">
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}" class="utente">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
-                <ul > <!-- Lista annidata: voci del sotto-menu -->
-            <li><a href="/app_dev.php/Userimpostazioniutente">Impostazioni</a></li>
-            <li><a href="/app_dev.php/home">Logout</a></li>
+  <header>
+    <div class="logo">
+      <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
+    </div>
+    <div class="pulsanteapp">
+      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+          <a href="{{ path('fos_user_security_logout') }}" class="utente">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+          </a>
+        <ul> <!-- Lista annidata: voci del sotto-menu -->
+          <li><a href="/app_dev.php/Userimpostazioniutente">Impostazioni</a></li>
+          <li><a href="/app_dev.php/home">Logout</a></li>
         </ul> <!-- Fine del sotto-menu -->
-            {% else %}
-                <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %} <!-- primo list-item, prima voce del menu -->  </div>
-</header>
-<nav id="navbar">
-  <ul class="menu">
-    <li><a href="/app_dev.php/home">Home</a></li>
-    <li><a href="/app_dev.php/gelaterie">Gelaterie</a></li>
-    <li><a href="/app_dev.php/comefunziona">Come funziona</a></li>
-  </ul>
-</nav>
+        {% else %}
+          <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+          </a>
+      {% endif %} <!-- primo list-item, prima voce del menu -->
+    </div>
+  </header>
+  <nav id="navbar">
+    <ul class="menu">
+      <li><a href="/app_dev.php/home">Home</a></li>
+      <li><a href="/app_dev.php/gelaterie">Gelaterie</a></li>
+      <li><a href="/app_dev.php/comefunziona">Come funziona</a></li>
+    </ul>
+  </nav>
 
-<!-- fine parte alta-->
+  <!-- fine parte alta-->
 
-        {% if app.request.hasPreviousSession %}
-            {% for type, messages in app.session.flashbag.all() %}
-                {% for message in messages %}
-                    <div class="flash-{{ type }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-        {% endif %}
+  {% if app.request.hasPreviousSession %}
+    {% for type, messages in app.session.flashbag.all() %}
+      {% for message in messages %}
+        <div class="flash-{{ type }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
 
-<div id="boximg">
-  <div class="trasparente">
+  <div id="boximg">
+    <div class="trasparente">
+     {%  block  fos_user_content  %} 
+     {%  endblock  fos_user_content  %} 
+    </div>
+  </div>
 
- {%  block  fos_user_content  %} 
- {%  endblock  fos_user_content  %} 
-
- </div>
-</div>
-
- <div class="gelatini"><img id="gelatinoid" src="/img/gelatino2.png" alt="Gelatino">  
-
-{% block testovariabile %}
-{% endblock testovariabile %} 
-
-
-</div>
-
- </div>
+  <div class="gelatini">
+    <img id="gelatinoid" src="/img/gelatino2.png" alt="Gelatino">
+      {% block testovariabile %}
+      {% endblock testovariabile %}
+  </div>
 
   <footer id="tutto">
     <div id="contenitorelogo">
@@ -81,31 +77,31 @@
         <p class="titolifooter">Chi siamo</p>
         <p class="testifooter">Leader nazionale nella produzione di gelato sfuso, Gelatone B&B ha deciso di affidarsi alla TAG Solutions per lo sviluppo di una piattaforma web-based dedicata alla ricerca delle gelaterie sul territorio italiano.</p>
       </div>
-<div id="boxtesto2">
+      <div id="boxtesto2">
         <p class="titolifooter">Contatti</p>
-        <p class="testifooter">info@gelato.b&b.com<br/>
-          Viale Umbria 76<br/>
-          20021, Milano<br/>
-        <a href="/app_dev.php/segnalagelateria">Segnala Gelateria</a><br/>
-</p>
-        </div>
-        <div id="boxtesto3">
-          <p class="titolifooter">Gelatone B&B</p>
-          <p class="testifooter">Capitale Sociale Euro 10.000,00 i.v.<br/>
-            P.IVA IT 03419970987<br/>
-            C.F. - R.I. BS 03419970987<br/>
-            R.E.A. CCIAA BS 532571</p>
-          </div>
-          <div id="boxtesto4">
-            <p class="titolifooter">Le città più ricercate</p>
-            <p class="testifooter"><a href="#">Ricerca su Milano</a><br/>
-              <a href="/app_dev.php/tabella">Ricerca su Roma</a><br/>
-              <a href="/app_dev.php/edit">Ricerca su Napoli</a><br/>
-              <a href="/app_dev.php/editgusto">Ricerca su Palermo</a></p>
-            </div>
-          </div>
-        </footer>
+          <p class="testifooter">info@gelato.b&b.com<br/>
+            Viale Umbria 76<br/>
+            20021, Milano<br/>
+          <a href="/app_dev.php/segnalagelateria">Segnala Gelateria</a>
+          <br/>
+          </p>
+      </div>
+      <div id="boxtesto3">
+        <p class="titolifooter">Gelatone B&B</p>
+        <p class="testifooter">Capitale Sociale Euro 10.000,00 i.v.<br/>
+          P.IVA IT 03419970987<br/>
+          C.F. - R.I. BS 03419970987<br/>
+          R.E.A. CCIAA BS 532571</p>
+      </div>
+      <div id="boxtesto4">
+        <p class="titolifooter">Le città più ricercate</p>
+        <p class="testifooter"><a href="#">Ricerca su Milano</a><br/>
+        <a href="/app_dev.php/tabella">Ricerca su Roma</a><br/>
+        <a href="/app_dev.php/edit">Ricerca su Napoli</a><br/>
+        <a href="/app_dev.php/editgusto">Ricerca su Palermo</a></p>
+      </div>
+    </div>
+  </footer>
 
-
-    </body>
-    </html>
+</body>
+</html>

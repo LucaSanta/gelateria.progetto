@@ -4,35 +4,36 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
-   <header>
-  <div class="logo">
-    <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
-  </div>
-  <div class="pulsanteapp">
-  <!-- div che contiene il menu -->
-<ul id="menu"> <!-- lista principale: definisce il menu nella sua interezza -->
-    <li>
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}" class="utente">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
+    </div>
+    <div class="pulsanteapp">
+      <!-- div che contiene il menu -->
+      <ul id="menu"> <!-- lista principale: definisce il menu nella sua interezza -->
+        <li>
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+              <a href="{{ path('fos_user_security_logout') }}" class="utente">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+              </a>
             {% else %}
-                <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %} <!-- primo list-item, prima voce del menu -->
-        <ul > <!-- Lista annidata: voci del sotto-menu -->
+              <a href="{{ path('fos_user_security_login') }}" class="utente">
+                {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+              </a>
+          {% endif %} <!-- primo list-item, prima voce del menu -->
+          <ul> <!-- Lista annidata: voci del sotto-menu -->
             <li><a href="/app_dev.php/Userimpostazioniutente">Impostazioni</a></li>
             <li><a href="/app_dev.php/home">Logout</a></li>
-        </ul> <!-- Fine del sotto-menu -->
-    </li> <!-- Chiudo il list-item -->
- 
-    
-  </div>
-</header>
+          </ul> <!-- Fine del sotto-menu -->
+        </li> <!-- Chiudo il list-item -->
+      </ul>
+    </div>
+  </header>
+
 <nav id="navbar">
   <ul class="menu">
     <li><a href="/app_dev.php/home">Home</a></li>
@@ -47,8 +48,14 @@
   <div id="larghezza">
     <div id="sidebar" class="sidebar1">
 
+        <p class="benvenuto">
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ app.user.username }}
 
-        <p class="benvenuto">Beatrice!</p> <!-- primo list-item, prima voce del menu -->
+            {% else %}
+              Benvenuto!
+          {% endif %}
+        </p> <!-- primo list-item, prima voce del menu -->
      
       <br/>
       <p>Cerca per gusto:</p>

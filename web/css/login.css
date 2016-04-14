@@ -146,14 +146,13 @@ a {
 
 input {
   background: #18c7aa; /* Colore di sfondo */
-    /*border: 1px solid #323232;  Bordo */
-    color: #fff; /* Colore del testo */
-    height: 25px; /* Altezza */
-    line-height: 25px; /* Altezza di riga */
-    width: 150px; /* Larghezza */
-    margin: 0 10px; /* Padding */
-    padding-left: 10px;
-    border-radius: 4px;
+  color: #fff; /* Colore del testo */
+  height: 25px; /* Altezza */
+  line-height: 25px; /* Altezza di riga */
+  width: 150px; /* Larghezza */
+  margin: 0 10px; /* Padding */
+  padding-left: 10px;
+  border-radius: 4px;
 }
 
 
@@ -183,11 +182,22 @@ input.bottone {
   position: relative;
 }
 
+#remember_me {
+  background: #18c7aa; /* Colore di sfondo */
+  color: #fff; /* Colore del testo */
+  height: 15px; /* Altezza */
+  line-height: 15px; /* Altezza di riga */
+  width: 15px; /* Larghezza */
+  margin-top: 10px;
+  margin-bottom: 18px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
 
 #gelatinoid {
     height: 90px;
     position: absolute;
-    top: 680px;
+    top: 650px;
     left: 659px;
 }
 
@@ -220,7 +230,7 @@ input.bottone {
 /* bea footer*/
 
 #tutto {
-  background: #f2f2f2;
+    background: #f2f2f2;
     text-align: center;
     position: relative;
     padding: 5%;
@@ -260,7 +270,7 @@ input.bottone {
 
 }
 
-#tutto a {
+a {
   text-decoration: none;
   color: #18c7aa;
 }
