@@ -1,6 +1,4 @@
-front_homepage:
-    path:     /
-    defaults: { _controller: FrontBundle:Default:index }
+
 
 _rotta:
     path:     /gelaterie
@@ -15,7 +13,7 @@ _segnalagelateria:
     defaults: { _controller: FrontBundle:Gelateria:segnalagelateria }
 
 _home:
-    path:     /home
+    path:     /
     defaults: { _controller: FrontBundle:Home:Home }
     
 _comefunziona:

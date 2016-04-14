@@ -1,6 +1,4 @@
-back_homepage:
-    path:     /
-    defaults: { _controller: BackBundle:Default:index }
+
 
 tabella:
     path:     /tabella
