@@ -1,5 +1,5 @@
 {% extends "::base.html.twig" %}
-{% block stylesheets %}        <link rel="stylesheet" href="/css/segnalagelateria.css" href="/css/segnalagelateria.css" type="text/css">
+{% block stylesheets %}        <link rel="stylesheet" href="/css/unico.css"type="text/css">
 {% endblock %}
 {% block body %}
   <div id="gelateria">
@@ -13,21 +13,21 @@
               <br/>
 
      
-      <label for=”indirizzo″>Indirizzo:<br></label>
-      <input class="indirizzo" name="indirizzo" type="text" value="Via Uffici del Vicario, 40 " size="40" maxlength="200" />
+      <label id="segnala" for=”indirizzo″>Indirizzo:<br></label>
+      <input class="indirizzo segnala" name="indirizzo" type="text" value="Via Uffici del Vicario, 40 " size="40" maxlength="200" />
         <br/>
 
-      <label for=”indirizzo″>Città:<br></label>
+      <label class="segnala" for=”indirizzo″>Città:<br></label>
       <input class="indirizzo" name="città" type="text" value="Roma " size="40" maxlength="200" />
         <br/>
 
-      <label for=”phone″>Tel:<br></label>
+      <label class="segnala" for=”phone″>Tel:<br></label>
       <input class="indirizzo" name="phone" type="text" value="+39 06 699 12 43" size="40" maxlength="200" />
        <br/>
        <br/>
 
       <fieldset>
-        <label class="labelimmagine"><p class="gustidisponibili">Seleziona i gusti disponibili in gelateria:</p>
+        <label class="segnala" class="labelimmagine"><p class="gustidisponibili">Seleziona i gusti disponibili in gelateria:</p>
         </label>
         <br/><br/>
             <input id="Cioccolato" type="checkbox" name="gusto" value="Cioccolato"/>

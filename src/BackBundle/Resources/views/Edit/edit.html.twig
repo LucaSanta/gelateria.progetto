@@ -2,66 +2,68 @@
 
 {% block title %}Edit Gelateria{% endblock %}
 {% block stylesheets %}
-  <link rel="stylesheet" href="/css/admingelateria.css" href="/css/admingelateria.css" type="text/css">
+  <link rel="stylesheet"  href="/css/unico.css" type="text/css">
 {% endblock %}
 
 {% block body %}
 
-<div id="larghezza">
-  <div id="sidebar" class="sidebar1">
+      <div id="boximgadmin">
+
+<div id="larghezzaadmin">
+  <div id="sidebaradmin" class="sidebar1admin">
   <br/>
   <form  method="GET">
-    <div class="lineaunoform">
-      <p class="benvenuto">Reportistica:</p> 
+    <div class="lineaunoformadmin">
+      <p class="benvenutoadmin">Reportistica:</p> 
       <p>Seleziona Gusto:</p>
-      <input class="inputalto" type="text" name="Gusto" value="Nome Gusto">
+      <input class="inputaltoadmin" type="text" name="Gusto" value="Nome Gusto">
       <br/>
       <p>Seleziona Città:</p>
-      <input class="inputalto" type="text" name="Comune" value="Nome Città">
-      <input class="bottone" type="submit" value="Ricerca" />
+      <input class="inputaltoadmin" type="text" name="Comune" value="Nome Città">
+      <input class="bottoneadmin" type="submit" value="Ricerca" />
     </div>
   </form>
 
-  <form class="aggiungi" method="GET">
-    <div class="lineadueform">
-    <p class="benvenuto">Aggiungi - Modifica</p>   
+  <form class="aggiungiadmin" method="GET">
+    <div class="lineadueformadmin">
+    <p class="benvenutoadmin">Aggiungi - Modifica</p>   
     <p>Gelateria:</p>
-    <input class="inputalto" type="text" name="Nuova gelateria" value="Nome gelateria">
+    <input class="inputaltoadmin" type="text" name="Nuova gelateria" value="Nome gelateria">
     <p>Gusto:</p>
-    <input class="inputalto" type="text" name="Aggiungi gusto" value="Nome gusto">
-    <input class="bottone" type="submit" value="Invia" />
+    <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
+    <input class="bottoneadmin" type="submit" value="Invia" />
   </form>
 </div>
 </div>
     
-    <div id="gelateria">
+    <div id="gelateriaadmin">
       
 
           <form method="GET">         
-      <div id="descrizione">
+      <div id="descrizioneadmin">
        <label for=”Nomeutente″>Nome gelateria:<br></label>
-      <input class="nomegelateria" name="Nomeutente" type="text" value="Gelateria Giolitti" size="40" maxlength="200" />
+      <input class="nomegelateriaadmin" name="Nomeutente" type="text" value="Gelateria Giolitti" size="40" maxlength="200" />
               <br/>
 
 
         <fieldset>
-        <label class="labelimmagine">Scegli immagine:</label><br><br>
-            <label for="1"><img class="gelatino" src="/img/gelatino1.png"></label>
+        <label class="labelimmagineadmin">Scegli immagine:</label><br><br>
+            <label for="1"><img class="gelatinoadmin" src="/img/gelatino1.png"></label>
             <input id="1"  type="radio" name="imglogogel" value="1"/>
 
-            <label for="2"><img class="gelatino" src="/img/gelatino2.png"></label>
+            <label for="2"><img class="gelatinoadmin" src="/img/gelatino2.png"></label>
             <input id="2"  type="radio" name="imglogogel" value="2"/>
 
-            <label for="3"><img class="gelatino" src="/img/gelatino3.png"></label>
+            <label for="3"><img class="gelatinoadmin" src="/img/gelatino3.png"></label>
             <input id="3"  type="radio" name="imglogogel" value="3"/>
 
-            <label for="4"><img class="gelatino" src="/img/gelatino4.png"></label>
+            <label for="4"><img class="gelatinoadmin" src="/img/gelatino4.png"></label>
             <input id="4"  type="radio" name="imglogogel" value="4"/>
 
-            <label for="5"><img class="gelatino" src="/img/gelatino5.png"></label>
+            <label for="5"><img class="gelatinoadmin" src="/img/gelatino5.png"></label>
             <input id="5"  type="radio" name="imglogogel" value="5"/>
 
-            <label for="6"><img class="gelatino" src="/img/gelatino6.png"></label>
+            <label for="6"><img class="gelatinoadmin" src="/img/gelatino6.png"></label>
             <input id="6" type="radio" name="imglogogel" value="6"/>
         
 
@@ -69,51 +71,52 @@
 
      
       <label for=”indirizzo″>Indirizzo:<br></label>
-      <input class="indirizzo" name="indirizzo" type="text" value="Via Uffici del Vicario, 40 " size="40" maxlength="200" />
+      <input class="indirizzoadmin" name="indirizzo" type="text" value="Via Uffici del Vicario, 40 " size="40" maxlength="200" />
         <br/>
 
       <label for=”indirizzo″>Città:<br></label>
-      <input class="indirizzo" name="città" type="text" value="Roma " size="40" maxlength="200" />
+      <input class="indirizzoadmin" name="città" type="text" value="Roma " size="40" maxlength="200" />
         <br/>
 
       <label for=”phone″>Tel:<br></label>
-      <input class="indirizzo" name="phone" type="text" value="+39 06 699 12 43" size="40" maxlength="200" />
+      <input class="indirizzoadmin" name="phone" type="text" value="+39 06 699 12 43" size="40" maxlength="200" />
        <br/>
        <br/>
 
       <fieldset>
-        <label class="labelimmagine"><p class="gustidisponibili">Seleziona i gusti disponibili in gelateria:</p>
+        <label class="labelimmagineadmin"><p class="gustidisponibili">Seleziona i gusti disponibili in gelateria:</p>
 </label>
         <br/>
 
-            <input id="Cioccolato"  type="checkbox" name="gusto" value="Cioccolato"/>
+            <input id="Cioccolatoadmin"  type="checkbox" name="gusto" value="Cioccolato"/>
             <label for="Cioccolato">Cioccolato</label>
           
-            <input id="Pistacchio"  type="checkbox" name="gusto" value="Pistacchio"/>
+            <input id="Pistacchioadmin"  type="checkbox" name="gusto" value="Pistacchio"/>
             <label for="Pistacchio">Pistacchio</label>
             
-            <input id="Amarena"  type="checkbox" name="gusto" value="Amarena"/>
+            <input id="Amarenaadmin"  type="checkbox" name="gusto" value="Amarena"/>
             <label for="Amarena">Amarena</label>
 
-            <input id="Tiramisu"  type="checkbox" name="gusto" value="Tiramisu"/>
+            <input id="Tiramisuadmin"  type="checkbox" name="gusto" value="Tiramisu"/>
             <label for="Tiramisu">Tiramisu</label>
 
-            <input id="Melone"  type="checkbox" name="gusto" value="Melone"/>
+            <input id="Meloneadmin"  type="checkbox" name="gusto" value="Melone"/>
             <label for="Melone">Melone</label>
 
-            <input id="Crema"  type="checkbox" name="gusto" value="Crema"/>
+            <input id="Cremaadmin"  type="checkbox" name="gusto" value="Crema"/>
             <label for="Crema">Crema</label>
             </fieldset>
                    <br/>
 
 
-        <input class="bottone" type="submit" value="Salva" />
+        <input class="bottoneadmin" type="submit" value="Salva" />
         <form action="GET">
-      <input class="bottone" type="submit" value="Cancella" />
+      <input class="bottoneadmin" type="submit" value="Cancella" />
       </form>
 
        </form>
         </div>
     </div>   
+        </div> 
 </div>    
 {% endblock %}

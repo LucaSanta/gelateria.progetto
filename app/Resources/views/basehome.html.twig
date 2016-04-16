@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/header.css" type="text/css">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" type="image/png"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/unico.css" type="text/css">
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" type="image/png"/>
 </head>
 <body>
- <header>
-  <div class="logo">
-    <a href="/" class="logo"><img src="/img/Logo.png" alt="logo"></a>
-  </div>
-  <div class="pulsanteapp">
-  <li>
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}" class="utente">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
+  <header>
+    <div class="logo">
+      <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
+    </div>
+      <div class="pulsanteapp">
+        <ul id="menu"> <!-- lista principale: definisce il menu nella sua interezza -->
+          <li>                   
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              <a href="/profiloutente.html" class="utente">{{ app.user.username }}</a> <!-- primo list-item, prima voce del menu -->
+                <ul > <!-- Lista annidata: voci del sotto-menu -->
+                <li><a href="/profiloutente.html">Impostazioni</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                </ul> <!-- Fine del sotto-menu -->
             {% else %}
-                <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %} <!-- primo list-item, prima voce del menu -->
-        <ul > <!-- Lista annidata: voci del sotto-menu -->
-            <li><a href="/app_dev.php/Userimpostazioniutente">Impostazioni</a></li>
-            <li><a href="/app_dev.php/home">Logout</a></li>
-        </ul> <!-- Fine del sotto-menu -->
-    </li> <!-- Chiudo il list-item -->
-   </div>
-</header>
+              <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+    </div>
+  </header>
+  
 <nav id="navbar">
   <ul class="menu">
     <li><a href="/app_dev.php/home">Home</a></li>
@@ -37,47 +35,46 @@
   </ul>
 </nav>
 <!-- fine parte alta-->
-<main id="boximg">
-{% block body %}{% endblock %}
-</main>
- <footer id="tutto">
-    <div id="contenitorelogo">
-      <img  class="logofooter" src="/img/Logo.png" alt="logo">
+
+  {% block body %}{% endblock %}
+<footer id="tutto">
+  <div id="contenitorelogo">
+    <img  class="logofooter" src="/img/Logo.png" alt="logo">
+  </div>
+  <br/>
+  <div id="contenitoresocial">
+    <img class="social" src="/img/facebook1.png" alt="Facebook">
+    <img class="social" src="/img/twitter1.png" alt="Twitter">
+    <img class="social" src="/img/email1.png" alt="Email">
+  </div>
+  <div id="boxtesti">
+    <div id="boxtesto1">
+      <p class="titolifooter">Chi siamo</p>
+      <p class="testifooter">Leader nazionale nella produzione di gelato sfuso, Gelatone B&B ha deciso di affidarsi alla TAG Solutions per lo sviluppo di una piattaforma web-based dedicata alla ricerca delle gelaterie sul territorio italiano.</p>
     </div>
-    <br/>
-    <div id="contenitoresocial">
-      <img class="social" src="/img/facebook1.png" alt="Facebook">
-      <img class="social" src="/img/twitter1.png" alt="Twitter">
-      <img class="social" src="/img/email1.png" alt="Email">
-    </div>
-    <div id="boxtesti">
-      <div id="boxtesto1">
-        <p class="titolifooter">Chi siamo</p>
-        <p class="testifooter">Leader nazionale nella produzione di gelato sfuso, Gelatone B&B ha deciso di affidarsi alla TAG Solutions per lo sviluppo di una piattaforma web-based dedicata alla ricerca delle gelaterie sul territorio italiano.</p>
-      </div>
-      <div id="boxtesto2">
-        <p class="titolifooter">Contatti</p>
-        <p class="testifooter">info@gelato.b&b.com<br/>
-          Viale Umbria 76<br/>
-          20021, Milano<br/>
+    <div id="boxtesto2">
+      <p class="titolifooter">Contatti</p>
+      <p class="testifooter">info@gelato.b&b.com<br/>
+        Viale Umbria 76<br/>
+        20021, Milano<br/>
         <a href="/app_dev.php/segnalagelateria">Segnala Gelateria</a><br/>
-</p>
+      </p>
+    </div>
+    <div id="boxtesto3">
+      <p class="titolifooter">Gelatone B&B</p>
+      <p class="testifooter">Capitale Sociale Euro 10.000,00 i.v.<br/>
+        P.IVA IT 03419970987<br/>
+        C.F. - R.I. BS 03419970987<br/>
+        R.E.A. CCIAA BS 532571</p>
+      </div>
+      <div id="boxtesto4">
+        <p class="titolifooter">Le città più ricercate</p>
+        <p class="testifooter"><a href="#">Ricerca su Milano</a><br/>
+          <a href="/app_dev.php/tabella">Ricerca su Roma</a><br/>
+          <a href="/app_dev.php/edit">Ricerca su Napoli</a><br/>
+          <a href="/app_dev.php/editgusto">Ricerca su Palermo</a></p>
         </div>
-        <div id="boxtesto3">
-          <p class="titolifooter">Gelatone B&B</p>
-          <p class="testifooter">Capitale Sociale Euro 10.000,00 i.v.<br/>
-            P.IVA IT 03419970987<br/>
-            C.F. - R.I. BS 03419970987<br/>
-            R.E.A. CCIAA BS 532571</p>
-          </div>
-          <div id="boxtesto4">
-            <p class="titolifooter">Le città più ricercate</p>
-            <p class="testifooter"><a href="#">Ricerca su Milano</a><br/>
-              <a href="/app_dev.php/tabella">Ricerca su Roma</a><br/>
-              <a href="/app_dev.php/edit">Ricerca su Napoli</a><br/>
-              <a href="/app_dev.php/editgusto">Ricerca su Palermo</a></p>
-            </div>
-          </div>
-        </footer>
-        </body>
-        </html>
+      </div>
+    </footer>
+  </body>
+  </html>

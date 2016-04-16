@@ -5,7 +5,7 @@ tabella:
     defaults: { _controller: BackBundle:Reportistica:tabella }
 
 edit:
-    path:     /edit
+    path:     /editgelateria
     defaults: { _controller: BackBundle:Edit:edit }
 
 editgusto:

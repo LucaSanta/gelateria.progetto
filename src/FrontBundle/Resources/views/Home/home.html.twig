@@ -1,27 +1,28 @@
 {% extends "::basehome.html.twig" %}
 {% block body %}
 <title>Gelatò</title>
-  <div class="trasparente">
-        <form method="GET">
+<main id="boximghome">
+  <div class="trasparentehome">
+        <form class='formhome' method="GET">
             
             <h2>Trova la tua gelateria!</h2>
             <p>Seleziona i tuoi gusti preferiti oppure scegli il comune o il giorno in cui vorresti andare a rinfrescare la tua giornata!</p>
  
-            <div class="lineaunoform">
+            <div class="lineaunoformhome">
                 
-                <select id="gusto1" class="formgusti" name="gusto1">
+                <select id="gusto1home" class="formgustihome" name="gusto1">
                     <option value="Cioccolato">Cioccolato</option>
                     <option value="Pistacchio">Pistacchio</option>
                     <option value="Crema">Crema</option>
                     <option value="Vaniglia">Vaniglia</option>
                 </select>
-                <select id="gusto2"  class="formgusti" name="gusto2">
+                <select id="gusto2home"  class="formgustihome" name="gusto2">
                     <option value="Cioccolato">Cioccolato</option>
                     <option value="Pistacchio">Pistacchio</option>
                     <option value="Crema">Crema</option>
                     <option value="Vaniglia">Vaniglia</option>
                 </select>
-                <select id="gusto3" class="formgusti" name="gusto3">
+                <select id="gusto3home" class="formgustihome" name="gusto3">
                     <option value="Cioccolato">Cioccolato</option>
                     <option value="Pistacchio">Pistacchio</option>
                     <option value="Crema">Crema</option>
@@ -29,10 +30,10 @@
                 </select>
             </div>
             
-            <div class="lineadueform">
-                <input type="text" class="formgusti" name="Comune" value="Comune">
+            <div class="lineadueformhome">
+                <input type="text" class="formgustihome" name="Comune" value="Comune">
             
-                <select id="giorni"  class="formgusti" name="aperture">
+                <select id="giornihome"  class="formgustihome" name="aperture">
                     <option value="Lun">Lunedì</option>
                     <option value="Mart">Martedì</option>
                     <option value="Merc">Mercoledì</option>
@@ -41,9 +42,10 @@
             </div>
             <br/>
             <div style="text-align:center;">
-             <input type="submit" class="bottone" value="Ricerca" />
+             <input type="submit" class="bottonehome" value="Ricerca" />
          </div>
     
  </form>
 </div>
+</main>
 {% endblock %}

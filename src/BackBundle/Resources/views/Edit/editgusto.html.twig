@@ -1,77 +1,80 @@
 {% extends "::baseadmin.html.twig" %}
 
 {% block title %}Edit Gusto{% endblock %}
-{% block stylesheets %}        <link rel="stylesheet" href="/css/admingelateria.css" href="/css/admingelateria.css" type="text/css">{% endblock %}
+{% block stylesheets %}        <link rel="stylesheet" href="/css/unico.css"  type="text/css">{% endblock %}
 
 
 {% block body %}
- <div id="larghezza">
-    <div id="sidebar" class="sidebar1">
+      <div id="boximgadmin">
+
+ <div id="larghezzaadmin">
+    <div id="sidebaradmin" class="sidebar1admin">
       <br/>
       <form  method="GET">
 
-        <div class="lineaunoform">
-        <p class="benvenuto">Reportistica:</p> 
+        <div class="lineaunoformadmin">
+        <p class="benvenutoadmin">Reportistica:</p> 
         <p>Seleziona Gusto:</p>
-        <input class="inputalto" type="text" name="Gusto" value="Nome Gusto">
+        <input class="inputaltoadmin" type="text" name="Gusto" value="Nome Gusto">
       <br/>
       <p>Seleziona Città:</p>
-        <input class="inputalto" type="text" name="Comune" value="Nome Città">
+        <input class="inputaltoadmin" type="text" name="Comune" value="Nome Città">
 
-      <input class="bottone" type="submit" value="Ricerca" />
+      <input class="bottoneadmin" type="submit" value="Ricerca" />
         </div>
 
       </form>
 
 
-      <form class="aggiungi" method="GET">
-      <div class="lineadueform">
-      <p class="benvenuto">Aggiungi - Modifica</p>   
+      <form class="aggiungiadmin" method="GET">
+      <div class="lineadueformadmin">
+      <p class="benvenutoadmin">Aggiungi - Modifica</p>   
         <p>Gelateria:</p>
-              <input class="inputalto" type="text" name="Nuova gelateria" value="Nome gelateria">
+              <input class="inputaltoadmin" type="text" name="Nuova gelateria" value="Nome gelateria">
          <p>Gusto:</p>      
 
-      <input class="inputalto" type="text" name="Aggiungi gusto" value="Nome gusto">
-       <input class="bottone" type="submit" value="Invia" />
+      <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
+       <input class="bottoneadmin" type="submit" value="Invia" />
 
       </form>
       </div>
 
     </div>
     
-    <div id="gelateria">
+    <div id="gelateriaadmin">
       
 
-      <div id="descrizione">
+      <div id="descrizioneadmin">
           <form method="GET">  
-          <p class="titolomodificagusto">Aggiungi gusto:</p> 
+          <p class="titolomodificagustoadmin">Aggiungi gusto:</p> 
 
-          <input class="inputalto" type="text" name="Aggiungi gusto" value="Nome gusto">
+          <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
                   <br/>
 
-       <input class="bottone" type="submit" value="Aggiungi" />
+       <input class="bottoneadmin" type="submit" value="Aggiungi" />
 
       </form>       
                         <br/>
                   <br/>
 
 
-      <p class="titolomodificagusto">Elimina gusto:</p> 
+      <p class="titolomodificagustoadmin">Elimina gusto:</p> 
         <form action="GET">
-        <select id="gusto1" class="formgusti" name="gusto1">
+        <select id="gusto1admin" class="formgustiadmin" name="gusto1">
           <option value="Cioccolato">Cioccolato</option>
           <option value="Pistacchio">Pistacchio</option>
           <option value="Crema">Crema</option>
           <option value="Vaniglia">Vaniglia</option>
         </select>
         <br/>
-      <input class="bottone" type="submit" value="Cancella" />
+      <input class="bottoneadmin" type="submit" value="Cancella" />
       </form>
 
        </form>
         </div>
     </div>    
   </div>
+</div>
 
 
 {% endblock %}

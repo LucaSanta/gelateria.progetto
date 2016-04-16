@@ -60,7 +60,91 @@ header div{
 .pulsanteapp a:hover {
   color: #000;
 }
+/*menu a tendina prova */
 
+.utente {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 18px;
+    font-family: 'Amatic';
+    font-size: 30px;
+    border-radius: 12px;
+    list-style-type: none !important; 
+
+
+}
+
+ul#menu 
+{
+    list-style-type: none !important; 
+
+}
+
+ul#menu li a:hover {
+    background: #18c7aa;
+    width: 2,00%;
+    border-radius: 12px;
+    list-style-type: none;
+
+
+
+}
+
+ul#menu ul {
+    margin:2px 0 0;
+    padding:0;
+    display:inline-block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index:9999;
+    border: 1px solid #18c7aa;
+    background: #18c7aa;
+    border-radius: 12px;
+    color: #18c7aa;
+    margin-top: 37px;
+    text-align: left;
+
+}
+
+ul#menu li:hover ul {
+    opacity: 1;
+    visibility: visible;
+
+
+}
+
+ul#menu ul li {
+    float: none;
+    display: block;
+    border: 0;
+    color: #18c7aa;
+
+
+
+}
+
+ul#menu ul a {
+    padding:10px;
+    width: 120px;
+    display: block;
+    white-space: nowrap;
+    float: none;
+    font-size: 25px;
+
+}
+
+ul#menu ul a:hover {
+    background-color: #fff;
+    color:#18c7aa;
+    font-size: 31px;
+    text-align: left;
+
+
+}
+/*finito il menu*/
 .logo {
   margin-left: 15.5%;
 

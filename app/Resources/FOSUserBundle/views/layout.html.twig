@@ -3,30 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Benvenuto!{% endblock %}</title>
-    <link rel="stylesheet" href="/css/login.css" href="/css/login.css" type="text/css">
+    <link rel="stylesheet" href="/css/login.css" type="text/css">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
   </head>
 
 <body>
- <header>
-  <div class="logo">
-    <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
-  </div>
-  <div class="pulsanteapp">
-  <ul id="menu"> <!-- lista principale: definisce il menu nella sua interezza -->
-    <li>                   
-      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        <a href="/profiloutente.html" class="utente">{{ app.user.username }}!</a> <!-- primo list-item, prima voce del menu -->
-        <ul > <!-- Lista annidata: voci del sotto-menu -->
-            <li><a href="/profiloutente.html">Impostazioni</a></li>
-            <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
-        </ul> <!-- Fine del sotto-menu -->
-      {% else %}
-          <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-      {% endif %}
-
-     
-</header>
+  <header>
+    <div class="logo">
+      <a href="/header.html" class="logo"><img src="/img/Logo.png" alt="logo"></a>
+    </div>
+      <div class="pulsanteapp">
+        <ul id="menu"> <!-- lista principale: definisce il menu nella sua interezza -->
+          <li>                   
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              <a href="/profiloutente.html" class="utente">{{ app.user.username }}</a> <!-- primo list-item, prima voce del menu -->
+                <ul > <!-- Lista annidata: voci del sotto-menu -->
+                <li><a href="/profiloutente.html">Impostazioni</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                </ul> <!-- Fine del sotto-menu -->
+            {% else %}
+              <a href="{{ path('fos_user_security_login') }}" class="utente">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+    </div>
+  </header>
 
 <nav id="navbar">
   <ul class="menu">
@@ -50,9 +49,11 @@
 
 <div id="boximg">
   <div class="trasparente">
+ {% block body %}
 
  {%  block  fos_user_content  %} 
  {%  endblock  fos_user_content  %} 
+ {%  endblock  body  %} 
 
  </div>
 </div>
