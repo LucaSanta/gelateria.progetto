@@ -29,6 +29,16 @@ class Provincia
     private $nome;
 
 
+//RELAZIONE
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Citta", mappedBy="idProvincia")
+     * 
+     */
+    private $citta;
+
+
     /**
      * Get id
      *

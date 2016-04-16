@@ -22,9 +22,9 @@ class Citta
     private $id;
 
     /**
-     * @var int
+     * @var Provincia
      *
-     * @ORM\Column(name="idProvincia", type="integer")
+     * @ORM\OneToOne(targetEntity="Provincia")
      */
     private $idProvincia;
 
@@ -34,6 +34,28 @@ class Citta
      * @ORM\Column(name="nome", type="string", length=255)
      */
     private $nome;
+
+
+//RELAZIONI
+
+    /**
+     * @var Gelateria
+     *
+     * @ORM\OneToMany(targetEntity="Gelateria", mappedBy="idCitta")
+     * 
+     */
+    private $gelateria;
+
+    /**
+     * @var Ricerca
+     *
+     * @ORM\OneToMany(targetEntity="Ricerca", mappedBy="idCitta")
+     * 
+     */
+    private $ricerca;
+
+
+
 
 
     /**
