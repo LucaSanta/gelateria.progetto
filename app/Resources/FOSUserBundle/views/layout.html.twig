@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>{% block title %}Benvenuto!{% endblock %}</title>
     <link rel="stylesheet" href="/css/login.css" type="text/css">
+      {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
   </head>
 
@@ -18,7 +19,7 @@
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               <a href="/profiloutente.html" class="utente">{{ app.user.username }}</a> <!-- primo list-item, prima voce del menu -->
                 <ul > <!-- Lista annidata: voci del sotto-menu -->
-                <li><a href="/profiloutente.html">Impostazioni</a></li>
+                <li><a href="{{ url('fos_user_profile_edit') }}">Impostazioni</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                 </ul> <!-- Fine del sotto-menu -->
             {% else %}
@@ -48,7 +49,8 @@
         {% endif %}
 
 <div id="boximg">
-  <div class="trasparente">
+ 
+
  {% block body %}
 
  {%  block  fos_user_content  %} 

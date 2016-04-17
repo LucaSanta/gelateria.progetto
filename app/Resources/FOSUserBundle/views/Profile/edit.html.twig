@@ -1,0 +1,92 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+    
+    {% block stylesheets %}
+     <link rel="stylesheet" href="/css/unico.css" type="text/css">
+    {% endblock  %}
+
+     {% block body %}
+      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                      <div id="larghezza">
+
+              <p class="benvenuto">{{ app.user.username }}</p>
+              <div id="sidebar" class="sidebar1">
+            <br/>
+            <p>Cerca per gusto:</p>
+            <form method="GET">
+              <div class="lineaunoform">
+                <select name="gusto1" class="formgusti">
+                  <option value="Primo">Primo gusto</option>
+                  <option value="Cioccolato">Cioccolato</option>
+                  <option value="Pistacchio">Pistacchio</option>
+                  <option value="Crema">Crema</option>
+                  <option value="Vaniglia">Vaniglia</option>
+                </select>
+                <br/>
+                <select name="gusto2" class="formgusti">
+                  <option value="Secondo">Secondo gusto</option>
+                  <option value="Cioccolato">Cioccolato</option>
+                  <option value="Pistacchio">Pistacchio</option>
+                  <option value="Crema">Crema</option>
+                  <option value="Vaniglia">Vaniglia</option>
+                </select>
+                <br/>
+                <select name="gusto3" class="formgusti">
+                  <option value="Terzo">Terzo gusto</option>
+                  <option value="Cioccolato">Cioccolato</option>
+                  <option value="Pistacchio">Pistacchio</option>
+                  <option value="Crema">Crema</option>
+                  <option value="Vaniglia">Vaniglia</option>
+                </select>
+              </div>
+              <br/>
+              <p>Cerca per città:</p>
+              <select name="città" class="formgusti">
+                <option value="Città">Seleziona la città</option>
+                <option value="Milano">Milano</option>
+                <option value="Roma">Roma</option>
+                <option value="Napoli">Napoli</option>
+                <option value="Palermo">Palermo</option>
+              </select>
+              <br/>
+              <br/>
+              <p>Cerca per giorno di apertura:</p>
+              <select name="giorno"class="formgusti">
+                <option value="Giorno">Seleziona il giorno</option>
+                <option value="Lunedì">Lunedì</option>
+                <option value="Martedì">Martedì</option>
+                <option value="Mercoledì">Mercoledì</option>
+                <option value="Giovedì">Giovedì</option>
+                <option value="Venerdì">Venerdì</option>
+                <option value="Sabato">Sabato</option>
+                <option value="Domenica">Domenica</option>
+              </select>
+              <input class="bottone" type="submit" value="Ricerca" />
+
+            </form>
+          </div>
+                      {% endif %}
+       <div id="gelateriaiu">
+    <div id="idgelatinoiu">
+      <img class="gelatinoiu" src="/img/gelatino3.png">
+    </div>
+    <div id="descrizioneiu">
+{% block fos_user_content %}
+{% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}
+
+      <br/>
+      <p class="gustidisponibiliiu">Lista delle gelaterie preferite <a href="#"><img class="icona1iu" src="/img/shapes.png"></a>
+      </p>
+      <div class="gustiiu">
+        <div class="elencogustiiu">
+          <p>Gelateria Giolitti <a href="#"><img class="icona1iu" src="/img/cestino.png"></a> </p>
+          <p>Gelateria Santa <a href="#"><img class="icona1iu" src="/img/cestino.png"></a></p>
+          <p>Gelateria Castaldo <a href="#"><img class="icona1iu" src="/img/cestino.png"></a></p>
+          <p>Gelateria Tundra  <a href="#"><img class="icona1iu" src="/img/cestino.png"></a></p>
+          <p>Gelateria Sir Oliver <a href="#"><img class="icona1iu" src="/img/cestino.png"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+   {%  endblock  body  %} 
+

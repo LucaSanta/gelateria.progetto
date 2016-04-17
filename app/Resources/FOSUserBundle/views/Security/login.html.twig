@@ -1,13 +1,23 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
+    {% block stylesheets %}
+
+    <link rel="stylesheet" href="/css/login.css" type="text/css">
+    {% endblock  %}
+    
+         {% block body %}
+
+  <div class="trasparente">
+
+
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
   {% if error %}
       <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
   {% endif %}
-  <p class="click">Benvenuto!</p>
-  <p class="istruzioni">Inserisci qui le tue informazioni personali per accedere a tutte le funzionalità del sito!</p>
+  <p class="click">Login!</p>
+  <p class="istruzioni">Inserisci le tue informazioni personali!</p>
   <br/>
   <br/>
 
@@ -15,23 +25,21 @@
     <form action="{{ path("fos_user_security_check") }}" method="post">
       <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-      <label for="username">{{ 'security.login.username'|trans }}</label>
+      <label for="username">Username</label>
       <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
       <br/>
       <br/>
 
-      <label for="password">{{ 'security.login.password'|trans }}</label>
+      <label for="password">Password</label>
       <input type="password" id="password" name="_password" required="required" />
       <br/>
       <br/>
 
       <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-      <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-      <br/>
-      <br/>
+      <label for="remember_me">Ricordami!</label>
       <br/>
 
-      <input class="bottone" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+      <input class="bottone" type="submit" id="_submit" name="_submit" value="Login" />
     </form>
   </div>
 
@@ -42,6 +50,10 @@
     <a href="{{ url('fos_user_registration_register') }}">Registrati</a>
   </p>
   <p class="passwordimenticata">Hai smarrito la tua Password?
-    <a href="/app_dev.php/Userpswdimenticata">Clicca qui</a>
+    <a href="{{ url('fos_user_resetting_request') }}">Clicca qui</a>
+
+
   </p>
 {% endblock testovariabile %} 
+</div>
+   {%  endblock  body  %} 

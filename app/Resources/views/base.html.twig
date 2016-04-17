@@ -18,7 +18,7 @@
 						{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 							<a href="/profiloutente.html" class="utente">{{ app.user.username }}</a> <!-- primo list-item, prima voce del menu -->
 								<ul > <!-- Lista annidata: voci del sotto-menu -->
-								<li><a href="/profiloutente.html">Impostazioni</a></li>
+								<li><a href="{{ url('fos_user_profile_edit') }}">Impostazioni</a></li>
 								<li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
 								</ul> <!-- Fine del sotto-menu -->
 						{% else %}
@@ -29,27 +29,21 @@
 	
 			<nav id="navbar">
 				<ul class="menu">
-					<li><a href="/app_dev.php/home">Home</a></li>
-					<li><a href="/app_dev.php/gelaterie">Gelaterie</a></li>
-					<li><a href="/app_dev.php/comefunziona">Come funziona</a></li>
+					<li><a href="{{ url('_home') }}">Home</a></li>
+					<li><a href="{{ url('_rotta') }}">Gelaterie</a></li>
+					<li><a href="{{ url('_comefunziona') }}">Come funziona</a></li>
 				</ul>
 			</nav>
 
 			<!-- fine parte alta-->
 
 			<div id="boximg">
-				<div id="larghezza">
-					<div id="sidebar" class="sidebar1">
-
-						<p class="benvenuto">
+						
 							{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-							{{ app.user.username }}
+											<div id="larghezza">
 
-							{% else %}
-							Benvenuto!
-							{% endif %}
-						</p> <!-- primo list-item, prima voce del menu -->
-
+							<p class="benvenuto">{{ app.user.username }}</p>
+							<div id="sidebar" class="sidebar1">
 						<br/>
 						<p>Cerca per gusto:</p>
 						<form method="GET">
@@ -104,7 +98,40 @@
 
 						</form>
 					</div>
-					{% block body %}{% endblock %}
+				{% endif %}
+
+		{% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+									<div id="larghezzaadmin">
+		<p class="benvenuto">{{ app.user.username }}</p>
+
+		  <div id="sidebaradmin" class="sidebar1admin">
+		  <br/>
+		  <form  method="GET">
+		    <div class="lineaunoformadmin">
+		      <p class="benvenutoadmin">Reportistica:</p> 
+		      <p>Seleziona Gusto:</p>
+		      <input class="inputaltoadmin" type="text" name="Gusto" value="Nome Gusto">
+		      <br/>
+		      <p>Seleziona Città:</p>
+		      <input class="inputaltoadmin" type="text" name="Comune" value="Nome Città">
+		      <input class="bottoneadmin" type="submit" value="Ricerca" />
+		    </div>
+		  </form>
+
+		  <form class="aggiungiadmin" method="GET">
+		    <div class="lineadueformadmin">
+		    <p class="benvenutoadmin">Aggiungi - Modifica</p>   
+		    <p>Gelateria:</p>
+		    <input class="inputaltoadmin" type="text" name="Nuova gelateria" value="Nome gelateria">
+		    <p>Gusto:</p>
+		    <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
+		    <input class="bottoneadmin" type="submit" value="Invia" />
+		  </form>
+		</div>{{ app.user.username }}
+									{% endif %}
+								 <!-- primo list-item, prima voce del menu -->
+
+							{% block body %}{% endblock %}
 				</div>
 
 

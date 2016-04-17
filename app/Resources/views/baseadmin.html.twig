@@ -20,7 +20,7 @@
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               <a href="/profiloutente.html" class="utente">{{ app.user.username }}</a> <!-- primo list-item, prima voce del menu -->
                 <ul > <!-- Lista annidata: voci del sotto-menu -->
-                <li><a href="/profiloutente.html">Impostazioni</a></li>
+                <li><a href="{{ url('fos_user_profile_edit') }}">Impostazioni</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                 </ul> <!-- Fine del sotto-menu -->
             {% else %}
@@ -31,9 +31,9 @@
   
       <nav id="navbar">
         <ul class="menu">
-          <li><a href="/app_dev.php/home">Home</a></li>
-          <li><a href="/app_dev.php/gelaterie">Gelaterie</a></li>
-          <li><a href="/app_dev.php/comefunziona">Come funziona</a></li>
+          <li><a href="{{ url('_home') }}">Home</a></li>
+          <li><a href="{{ url('_rotta') }}">Gelaterie</a></li>
+          <li><a href="{{ url('_comefunziona') }}">Come funziona</a></li>
         </ul>
       </nav>
 
