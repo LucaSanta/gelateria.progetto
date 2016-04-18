@@ -29,9 +29,9 @@ class Ricerca
     private $data;
 
     /**
-     * @var int
+     * @var User
      *
-     * @ORM\Column(name="idUser", type="integer")
+     * @ORM\OneToOne(targetEntity="User")
      */
     private $idUser;
 
@@ -43,11 +43,16 @@ class Ricerca
     private $idGusto;
 
     /**
-     * @var int
+     * @var Citta
      *
-     * @ORM\Column(name="idCitta", type="integer")
+     * @ORM\OneToOne(targetEntity="Citta")
      */
     private $idCitta;
+
+
+//RELAZIONI
+
+
 
 
     /**
@@ -154,6 +159,19 @@ class Ricerca
     public function getIdCitta()
     {
         return $this->idCitta;
+    }
+
+
+    public function setGusti($gusti)
+    {
+        $this->gusti = $gusti;
+
+        return $this;
+    }
+
+    public function getGusti()
+    {
+        return $this->gusti;
     }
 }
 

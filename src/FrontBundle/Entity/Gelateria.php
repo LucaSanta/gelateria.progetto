@@ -2,6 +2,7 @@
 
 namespace FrontBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,9 +30,9 @@ class Gelateria
     private $nome;
 
     /**
-     * @var int
+     * @var Citta
      *
-     * @ORM\Column(name="idCitta", type="integer")
+     * @ORM\OneToOne(targetEntity="Citta")
      */
     private $idCitta;
 
@@ -55,6 +56,91 @@ class Gelateria
      * @ORM\Column(name="descrizione", type="text")
      */
     private $descrizione;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="gelatini", type="integer", unique=true)
+     */
+    private $gelatini;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="segnalazione", type="boolean")
+     */
+    private $segnalazione;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="lunedì", type="boolean")
+     */
+    private $lunedì;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="martedì", type="boolean")
+     */
+    private $martedì;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="mercoledì", type="boolean")
+     */
+    private $mercoledì;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="giovedì", type="boolean")
+     */
+    private $giovedì;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="venerdì", type="boolean")
+     */
+    private $venerdì;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="sabato", type="boolean")
+     */
+    private $sabato;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="domenica", type="boolean")
+     */
+    private $domenica;
+
+
+//RELAZIONI
+
+
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Gusti")
+     * @ORM\JoinTable(name="ListaGusti",
+     *      joinColumns={@ORM\JoinColumn(name="idGelateria", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idGusti", referencedColumnName="id", unique=true)}
+     *      )
+     */
+    private $gusti;
+
+    public function __construct()
+    {
+        $this->gusti = new ArrayCollection();
+    }
+
+
+
 
 
     /**
@@ -186,4 +272,19 @@ class Gelateria
     {
         return $this->descrizione;
     }
+
+
+
+    public function setGusti($gusti)
+    {
+        $this->gusti = $gusti;
+
+        return $this;
+    }
+
+    public function getGusti()
+    {
+        return $this->gusti;
+    }
+
 }

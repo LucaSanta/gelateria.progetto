@@ -4,6 +4,7 @@ namespace FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Utente
@@ -20,6 +21,35 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+
+//RELAZIONI
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Ricerca", mappedBy="idUser")
+     * 
+     *
+     */
+    private $ricerca;
+
+
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Gelateria")
+     * @ORM\JoinTable(name="Preferiti",
+     *      joinColumns={@ORM\JoinColumn(name="idGelateria2", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idUser2", referencedColumnName="id", unique=true)}
+     *
+     *
+     */
+//    private $preferiti;
+//
+//    public function __construct()
+//    {
+//        $this->preferiti = new ArrayCollection();
+//    }
+
 
     /**
      * Get id
@@ -40,6 +70,18 @@ class User extends BaseUser
         parent::__construct();
     }
 
+
+    public function setPreferiti($preferiti)
+    {
+        $this->preferiti = $preferiti;
+
+        return $this;
+    }
+
+    public function getPreferiti()
+    {
+        return $this->preferiti;
+    }
 
 }
 
