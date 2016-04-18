@@ -24,7 +24,7 @@ class Citta
     /**
      * @var Provincia
      *
-     * @ORM\OneToOne(targetEntity="Provincia")
+     * @ORM\ManyToOne(targetEntity="Provincia", inversedBy="citta")
      */
     private $idProvincia;
 

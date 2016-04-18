@@ -31,7 +31,7 @@ class Ricerca
     /**
      * @var User
      *
-     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="ricerca")
      */
     private $idUser;
 
@@ -45,13 +45,9 @@ class Ricerca
     /**
      * @var Citta
      *
-     * @ORM\OneToOne(targetEntity="Citta")
+     * @ORM\ManyToOne(targetEntity="Citta", inversedBy="ricerca")
      */
     private $idCitta;
-
-
-//RELAZIONI
-
 
 
 
