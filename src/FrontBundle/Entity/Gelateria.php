@@ -32,7 +32,7 @@ class Gelateria
     /**
      * @var Citta
      *
-     * @ORM\OneToOne(targetEntity="Citta")
+     * @ORM\ManyToOne(targetEntity="Citta", inversedBy="gelateria")
      */
     private $idCitta;
 

@@ -40,15 +40,10 @@ class User extends BaseUser
      * @ORM\JoinTable(name="Preferiti",
      *      joinColumns={@ORM\JoinColumn(name="idGelateria2", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="idUser2", referencedColumnName="id", unique=true)}
-     *
+     * )
      *
      */
-//    private $preferiti;
-//
-//    public function __construct()
-//    {
-//        $this->preferiti = new ArrayCollection();
-//    }
+    private $preferiti;
 
 
     /**
@@ -68,6 +63,7 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->preferiti = new ArrayCollection();
     }
 
 
