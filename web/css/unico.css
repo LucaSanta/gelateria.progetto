@@ -296,7 +296,7 @@ select.formgustiadmin {
 
 }
 
-input.bottoneadmin {
+.bottoneadmin {
     border: 1px solid #18c7aa;
     border-radius: 4px;
     background: #fff;

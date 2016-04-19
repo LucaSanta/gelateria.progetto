@@ -4,6 +4,8 @@ namespace FrontBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Gelateria
@@ -51,16 +53,9 @@ class Gelateria
     private $telefono;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="descrizione", type="text")
-     */
-    private $descrizione;
-
-    /**
      * @var int
      *
-     * @ORM\Column(name="gelatini", type="integer", unique=true)
+     * @ORM\Column(name="gelatini", type="integer", unique=false)
      */
     private $gelatini;
 
@@ -74,42 +69,47 @@ class Gelateria
     /**
      * @var boolean
      *
-     * @ORM\Column(name="lunedì", type="boolean")
+     * @ORM\Column(name="lunedi", type="boolean")
      */
-    private $lunedì;
+    private $lunedi;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="martedì", type="boolean")
+     * @ORM\Column(name="martedi", type="boolean")
+     * @Assert\Blank()
      */
-    private $martedì;
+    private $martedi;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="mercoledì", type="boolean")
+     * @ORM\Column(name="mercoledi", type="boolean")
+     * @Assert\Blank()
      */
-    private $mercoledì;
+    private $mercoledi;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="giovedì", type="boolean")
+     * @ORM\Column(name="giovedi", type="boolean")
+     * @Assert\Blank()
      */
-    private $giovedì;
+    private $giovedi;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="venerdì", type="boolean")
+     * @ORM\Column(name="venerdi", type="boolean")
+     * @Assert\Blank()
      */
-    private $venerdì;
+    private $venerdi;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="sabato", type="boolean")
+     * @Assert\Blank()
      */
     private $sabato;
 
@@ -117,6 +117,7 @@ class Gelateria
      * @var boolean
      *
      * @ORM\Column(name="domenica", type="boolean")
+     * @Assert\Blank()
      */
     private $domenica;
 
@@ -287,4 +288,244 @@ class Gelateria
         return $this->gusti;
     }
 
+
+    /**
+     * Set gelatini
+     *
+     * @param integer $gelatini
+     *
+     * @return Gelateria
+     */
+    public function setGelatini($gelatini)
+    {
+        $this->gelatini = $gelatini;
+
+        return $this;
+    }
+
+    /**
+     * Get gelatini
+     *
+     * @return integer
+     */
+    public function getGelatini()
+    {
+        return $this->gelatini;
+    }
+
+    /**
+     * Set segnalazione
+     *
+     * @param boolean $segnalazione
+     *
+     * @return Gelateria
+     */
+    public function setSegnalazione($segnalazione)
+    {
+        $this->segnalazione = $segnalazione;
+
+        return $this;
+    }
+
+    /**
+     * Get segnalazione
+     *
+     * @return boolean
+     */
+    public function getSegnalazione()
+    {
+        return $this->segnalazione;
+    }
+
+    /**
+     * Set lunedi
+     *
+     * @param boolean $lunedi
+     *
+     * @return Gelateria
+     */
+    public function setLunedi($lunedi)
+    {
+        $this->lunedi = $lunedi;
+
+        return $this;
+    }
+
+    /**
+     * Get lunedi
+     *
+     * @return boolean
+     */
+    public function getLunedi()
+    {
+        return $this->lunedi;
+    }
+
+    /**
+     * Set martedi
+     *
+     * @param boolean $martedi
+     *
+     * @return Gelateria
+     */
+    public function setMartedi($martedi)
+    {
+        $this->martedi = $martedi;
+
+        return $this;
+    }
+
+    /**
+     * Get martedi
+     *
+     * @return boolean
+     */
+    public function getMartedi()
+    {
+        return $this->martedi;
+    }
+
+    /**
+     * Set mercoledi
+     *
+     * @param boolean $mercoledi
+     *
+     * @return Gelateria
+     */
+    public function setMercoledi($mercoledi)
+    {
+        $this->mercoledi = $mercoledi;
+
+        return $this;
+    }
+
+    /**
+     * Get mercoledi
+     *
+     * @return boolean
+     */
+    public function getMercoledi()
+    {
+        return $this->mercoledi;
+    }
+
+    /**
+     * Set giovedi
+     *
+     * @param boolean $giovedi
+     *
+     * @return Gelateria
+     */
+    public function setGiovedi($giovedi)
+    {
+        $this->giovedi = $giovedi;
+
+        return $this;
+    }
+
+    /**
+     * Get giovedi
+     *
+     * @return boolean
+     */
+    public function getGiovedi()
+    {
+        return $this->giovedi;
+    }
+
+    /**
+     * Set venerdi
+     *
+     * @param boolean $venerdi
+     *
+     * @return Gelateria
+     */
+    public function setVenerdi($venerdi)
+    {
+        $this->venerdi = $venerdi;
+
+        return $this;
+    }
+
+    /**
+     * Get venerdi
+     *
+     * @return boolean
+     */
+    public function getVenerdi()
+    {
+        return $this->venerdi;
+    }
+
+    /**
+     * Set sabato
+     *
+     * @param boolean $sabato
+     *
+     * @return Gelateria
+     */
+    public function setSabato($sabato)
+    {
+        $this->sabato = $sabato;
+
+        return $this;
+    }
+
+    /**
+     * Get sabato
+     *
+     * @return boolean
+     */
+    public function getSabato()
+    {
+        return $this->sabato;
+    }
+
+    /**
+     * Set domenica
+     *
+     * @param boolean $domenica
+     *
+     * @return Gelateria
+     */
+    public function setDomenica($domenica)
+    {
+        $this->domenica = $domenica;
+
+        return $this;
+    }
+
+    /**
+     * Get domenica
+     *
+     * @return boolean
+     */
+    public function getDomenica()
+    {
+        return $this->domenica;
+    }
+
+    /**
+     * Add gusti
+     *
+     * @param \FrontBundle\Entity\Gusti $gusti
+     *
+     * @return Gelateria
+     */
+    public function addGusti(\FrontBundle\Entity\Gusti $gusti)
+    {
+        $this->gusti[] = $gusti;
+
+        return $this;
+    }
+
+    /**
+     * Remove gusti
+     *
+     * @param \FrontBundle\Entity\Gusti $gusti
+     */
+    public function removeGusti(\FrontBundle\Entity\Gusti $gusti)
+    {
+        $this->gusti->removeElement($gusti);
+    }
 }

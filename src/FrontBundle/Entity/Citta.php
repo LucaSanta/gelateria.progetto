@@ -115,5 +115,80 @@ class Citta
     {
         return $this->nome;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->gelateria = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ricerca = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add gelaterium
+     *
+     * @param \FrontBundle\Entity\Gelateria $gelaterium
+     *
+     * @return Citta
+     */
+    public function addGelaterium(\FrontBundle\Entity\Gelateria $gelaterium)
+    {
+        $this->gelateria[] = $gelaterium;
+
+        return $this;
+    }
+
+    /**
+     * Remove gelaterium
+     *
+     * @param \FrontBundle\Entity\Gelateria $gelaterium
+     */
+    public function removeGelaterium(\FrontBundle\Entity\Gelateria $gelaterium)
+    {
+        $this->gelateria->removeElement($gelaterium);
+    }
+
+    /**
+     * Get gelateria
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGelateria()
+    {
+        return $this->gelateria;
+    }
+
+    /**
+     * Add ricerca
+     *
+     * @param \FrontBundle\Entity\Ricerca $ricerca
+     *
+     * @return Citta
+     */
+    public function addRicerca(\FrontBundle\Entity\Ricerca $ricerca)
+    {
+        $this->ricerca[] = $ricerca;
+
+        return $this;
+    }
+
+    /**
+     * Remove ricerca
+     *
+     * @param \FrontBundle\Entity\Ricerca $ricerca
+     */
+    public function removeRicerca(\FrontBundle\Entity\Ricerca $ricerca)
+    {
+        $this->ricerca->removeElement($ricerca);
+    }
+
+    /**
+     * Get ricerca
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRicerca()
+    {
+        return $this->ricerca;
+    }
+}

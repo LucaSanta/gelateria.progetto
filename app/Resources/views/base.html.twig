@@ -16,7 +16,7 @@
 				<ul id="menu"> <!-- lista principale: definisce il menu nella sua interezza -->
 					<li>                   
 						{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-							<a href="/profiloutente.html" class="utente">{{ app.user.username }}</a> <!-- primo list-item, prima voce del menu -->
+							<a href="{{ url('fos_user_profile_edit') }}" class="utente">{{ app.user.username }}</a> <!-- primo list-item, prima voce del menu -->
 								<ul > <!-- Lista annidata: voci del sotto-menu -->
 								<li><a href="{{ url('fos_user_profile_edit') }}">Impostazioni</a></li>
 								<li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
@@ -39,7 +39,7 @@
 
 			<div id="boximg">
 						
-							{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+							{% if is_granted("IS_AUTHENTICATED_REMEMBERED") and not is_granted('ROLE_ADMIN') %}
 											<div id="larghezza">
 
 							<p class="benvenuto">{{ app.user.username }}</p>
@@ -100,9 +100,9 @@
 					</div>
 				{% endif %}
 
-		{% if is_granted('ROLE_PREVIOUS_ADMIN') %}
-									<div id="larghezzaadmin">
-		<p class="benvenuto">{{ app.user.username }}</p>
+		{% if is_granted('ROLE_ADMIN') %}
+
+		<div id="larghezzaadmin">
 
 		  <div id="sidebaradmin" class="sidebar1admin">
 		  <br/>
@@ -127,7 +127,8 @@
 		    <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
 		    <input class="bottoneadmin" type="submit" value="Invia" />
 		  </form>
-		</div>{{ app.user.username }}
+		  </div>
+		</div>
 									{% endif %}
 								 <!-- primo list-item, prima voce del menu -->
 

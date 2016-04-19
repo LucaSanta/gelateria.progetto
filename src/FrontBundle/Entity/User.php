@@ -79,5 +79,62 @@ class User extends BaseUser
         return $this->preferiti;
     }
 
-}
 
+    /**
+     * Add ricerca
+     *
+     * @param \FrontBundle\Entity\Ricerca $ricerca
+     *
+     * @return User
+     */
+    public function addRicerca(\FrontBundle\Entity\Ricerca $ricerca)
+    {
+        $this->ricerca[] = $ricerca;
+
+        return $this;
+    }
+
+    /**
+     * Remove ricerca
+     *
+     * @param \FrontBundle\Entity\Ricerca $ricerca
+     */
+    public function removeRicerca(\FrontBundle\Entity\Ricerca $ricerca)
+    {
+        $this->ricerca->removeElement($ricerca);
+    }
+
+    /**
+     * Get ricerca
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRicerca()
+    {
+        return $this->ricerca;
+    }
+
+    /**
+     * Add preferiti
+     *
+     * @param \FrontBundle\Entity\Gelateria $preferiti
+     *
+     * @return User
+     */
+    public function addPreferiti(\FrontBundle\Entity\Gelateria $preferiti)
+    {
+        $this->preferiti[] = $preferiti;
+
+        return $this;
+    }
+
+    /**
+     * Remove preferiti
+     *
+     * @param \FrontBundle\Entity\Gelateria $preferiti
+     */
+    public function removePreferiti(\FrontBundle\Entity\Gelateria $preferiti)
+    {
+        $this->preferiti->removeElement($preferiti);
+    }
+}

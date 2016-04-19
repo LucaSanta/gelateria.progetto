@@ -170,4 +170,3 @@ class Ricerca
         return $this->gusti;
     }
 }
-

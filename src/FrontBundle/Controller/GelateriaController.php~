@@ -61,7 +61,7 @@ class GelateriaController extends Controller
             return $this->redirectToRoute('_rotta');
         }
 
-        return $this->render('FrontBundle:Gelateria:creagel.html.twig', array(
+        return $this->render('FrontBundle:Gelateria:creategel.html.twig', array(
             'form' => $form->createView(),
         ));
     }

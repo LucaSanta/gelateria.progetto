@@ -37,10 +37,105 @@
 
 <!-- fine parte alta-->
 
-<div id="boximg">
-{% block body %}
-{% endblock %}
-</div>
+      <div id="boximg">
+            
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and not is_granted('ROLE_ADMIN') %}
+                      <div id="larghezza">
+
+              <p class="benvenuto">{{ app.user.username }}</p>
+              <div id="sidebar" class="sidebar1">
+            <br/>
+            <p>Cerca per gusto:</p>
+            <form method="GET">
+              <div class="lineaunoform">
+                <select name="gusto1" class="formgusti">
+                  <option value="Primo">Primo gusto</option>
+                  <option value="Cioccolato">Cioccolato</option>
+                  <option value="Pistacchio">Pistacchio</option>
+                  <option value="Crema">Crema</option>
+                  <option value="Vaniglia">Vaniglia</option>
+                </select>
+                <br/>
+                <select name="gusto2" class="formgusti">
+                  <option value="Secondo">Secondo gusto</option>
+                  <option value="Cioccolato">Cioccolato</option>
+                  <option value="Pistacchio">Pistacchio</option>
+                  <option value="Crema">Crema</option>
+                  <option value="Vaniglia">Vaniglia</option>
+                </select>
+                <br/>
+                <select name="gusto3" class="formgusti">
+                  <option value="Terzo">Terzo gusto</option>
+                  <option value="Cioccolato">Cioccolato</option>
+                  <option value="Pistacchio">Pistacchio</option>
+                  <option value="Crema">Crema</option>
+                  <option value="Vaniglia">Vaniglia</option>
+                </select>
+              </div>
+              <br/>
+              <p>Cerca per città:</p>
+              <select name="città" class="formgusti">
+                <option value="Città">Seleziona la città</option>
+                <option value="Milano">Milano</option>
+                <option value="Roma">Roma</option>
+                <option value="Napoli">Napoli</option>
+                <option value="Palermo">Palermo</option>
+              </select>
+              <br/>
+              <br/>
+              <p>Cerca per giorno di apertura:</p>
+              <select name="giorno"class="formgusti">
+                <option value="Giorno">Seleziona il giorno</option>
+                <option value="Lunedì">Lunedì</option>
+                <option value="Martedì">Martedì</option>
+                <option value="Mercoledì">Mercoledì</option>
+                <option value="Giovedì">Giovedì</option>
+                <option value="Venerdì">Venerdì</option>
+                <option value="Sabato">Sabato</option>
+                <option value="Domenica">Domenica</option>
+              </select>
+              <input class="bottone" type="submit" value="Ricerca" />
+
+            </form>
+          </div>
+        {% endif %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+
+                  <div id="larghezzaadmin">
+    <p class="benvenuto">{{ app.user.username }}</p>
+
+      <div id="sidebaradmin" class="sidebar1admin">
+      <br/>
+      <form  method="GET">
+        <div class="lineaunoformadmin">
+          <p class="benvenutoadmin">Reportistica:</p> 
+          <p>Seleziona Gusto:</p>
+          <input class="inputaltoadmin" type="text" name="Gusto" value="Nome Gusto">
+          <br/>
+          <p>Seleziona Città:</p>
+          <input class="inputaltoadmin" type="text" name="Comune" value="Nome Città">
+          <input class="bottoneadmin" type="submit" value="Ricerca" />
+        </div>
+      </form>
+
+      <form class="aggiungiadmin" method="GET">
+        <div class="lineadueformadmin">
+        <p class="benvenutoadmin">Aggiungi - Modifica</p>   
+        <p>Gelateria:</p>
+        <input class="inputaltoadmin" type="text" name="Nuova gelateria" value="Nome gelateria">
+        <p>Gusto:</p>
+        <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
+        <input class="bottoneadmin" type="submit" value="Invia" />
+      </form>
+      </div>
+    </div>{{ app.user.username }}
+                  {% endif %}
+                 <!-- primo list-item, prima voce del menu -->
+
+              {% block body %}{% endblock %}
+        </div>
+
 
   <footer id="tutto">
     <div id="contenitorelogo">

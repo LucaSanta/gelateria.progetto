@@ -1,4 +1,4 @@
-{% extends "::baseadmin.html.twig" %}
+{% extends "::base.html.twig" %}
 
 {% block title %}Edit Gelateria{% endblock %}
 {% block stylesheets %}
@@ -7,35 +7,8 @@
 
 {% block body %}
 
-<div id="boximgadmin">
 
-<div id="larghezzaadmin">
-  <div id="sidebaradmin" class="sidebar1admin">
-  <br/>
-  <form  method="GET">
-    <div class="lineaunoformadmin">
-      <p class="benvenutoadmin">Reportistica:</p> 
-      <p>Seleziona Gusto:</p>
-      <input class="inputaltoadmin" type="text" name="Gusto" value="Nome Gusto">
-      <br/>
-      <p>Seleziona Città:</p>
-      <input class="inputaltoadmin" type="text" name="Comune" value="Nome Città">
-      <input class="bottoneadmin" type="submit" value="Ricerca" />
-    </div>
-  </form>
 
-  <form class="aggiungiadmin" method="GET">
-    <div class="lineadueformadmin">
-    <p class="benvenutoadmin">Aggiungi - Modifica</p>   
-    <p>Gelateria:</p>
-    <input class="inputaltoadmin" type="text" name="Nuova gelateria" value="Nome gelateria">
-    <p>Gusto:</p>
-    <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
-    <input class="bottoneadmin" type="submit" value="Invia" />
-  </form>
-</div>
-</div>
-    
     <div id="gelateriaadmin">
       
 
@@ -116,7 +89,6 @@
 
        </form>
         </div>
-    </div>   
         </div> 
 </div>    
 {% endblock %}

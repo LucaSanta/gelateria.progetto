@@ -5,7 +5,7 @@
     {% endblock  %}
 
      {% block body %}
-      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and not is_granted('ROLE_ADMIN') %}
                       <div id="larghezza">
 
               <p class="benvenuto">{{ app.user.username }}</p>
@@ -64,7 +64,37 @@
 
             </form>
           </div>
-                      {% endif %}
+        {% endif %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+
+                  <div id="larghezzaadmin">
+      <div id="sidebaradmin" class="sidebar1admin">
+      <br/>
+      <form  method="GET">
+        <div class="lineaunoformadmin">
+          <p class="benvenutoadmin">Reportistica:</p> 
+          <p>Seleziona Gusto:</p>
+          <input class="inputaltoadmin" type="text" name="Gusto" value="Nome Gusto">
+          <br/>
+          <p>Seleziona Città:</p>
+          <input class="inputaltoadmin" type="text" name="Comune" value="Nome Città">
+          <input class="bottoneadmin" type="submit" value="Ricerca" />
+        </div>
+      </form>
+
+      <form class="aggiungiadmin" method="GET">
+        <div class="lineadueformadmin">
+        <p class="benvenutoadmin">Aggiungi - Modifica</p>   
+        <p>Gelateria:</p>
+        <input class="inputaltoadmin" type="text" name="Nuova gelateria" value="Nome gelateria">
+        <p>Gusto:</p>
+        <input class="inputaltoadmin" type="text" name="Aggiungi gusto" value="Nome gusto">
+        <input class="bottoneadmin" type="submit" value="Invia" />
+      </form>
+      </div>
+    </div>{{ app.user.username }}
+                  {% endif %}
        <div id="gelateriaiu">
     <div id="idgelatinoiu">
       <img class="gelatinoiu" src="/img/gelatino3.png">
