@@ -19,10 +19,6 @@ class GelateriaFormType extends AbstractType
     {
         $builder
             ->add('nome', TextType::class)
-            ->add('gelatini', ChoiceType::class, array(
-                    'scegli'    => array('m' => 'label', 'f' => 'Female'),
-                    'required' => false
-                 )
             ->add('indirizzo', TextType::class)
             ->add('telefono', IntegerType::class)
             ->add('save', SubmitType::class)

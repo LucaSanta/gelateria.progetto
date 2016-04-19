@@ -13,10 +13,14 @@ _segnalagelateria:
     defaults: { _controller: FrontBundle:Gelateria:segnalagelateria }
 
 _editgelateria:
-    path:     /gelateria/{id}/edit
-    defaults: { _controller: FrontBundle:Gelateria:edit }
+    path:     /gelateria/{id}/delate
+    defaults: { _controller: FrontBundle:Gelateria:delate }
 
 _creategelateria:
+    path:     /newgelateria
+    defaults: { _controller: FrontBundle:Gelateria:create }
+
+_gelateria_delate:
     path:     /newgelateria
     defaults: { _controller: FrontBundle:Gelateria:create }
 
